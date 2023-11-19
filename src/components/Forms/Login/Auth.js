@@ -1,14 +1,21 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-//import "./scss/components/input" 
-
+import AuthService from '../../../services/AuthService';
 
 
 const Auth = () => {
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data); // Отправка данных формы
+    //console.log(data); // Отправка данных формы
+
+    const { email, name, password } = data
+
+    console.log(email, name ); // Отправка данных формы
+
+
+ //   AuthService.registrtion()
+
   };
 
   return (

@@ -1,7 +1,7 @@
 import Registration from "../components/Forms/Registration/Registration"
 import Auth from "../components/Forms/Login/Auth"
-//<Registration />
 
+//   <Registration />
 
 
 
@@ -10,7 +10,7 @@ const Enter = () => {
   return (
   <div>
     Вход / Регистрация
-   <Auth />
+    <Registration />
   </div>
   )}
   
