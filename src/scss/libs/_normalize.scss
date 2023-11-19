@@ -18,6 +18,10 @@ body {
   color: $black;
 }
 
+input {
+  all: unset;
+  /* Дополнительные обнуляющие стили по вашему выбору */
+}
 a,
 span,
 p,
@@ -42,6 +46,11 @@ h2 {
 
 a {
   text-decoration: none;
+}
+
+button {
+  all: initial; /* Сбрасывает все свойства элемента button */
+  cursor: pointer;
 }
 
 @mixin noselect {

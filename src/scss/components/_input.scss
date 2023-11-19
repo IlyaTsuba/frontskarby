@@ -1,0 +1,87 @@
+// inputStyles.scss
+
+
+/*
+input {
+ //   font-family: Poppins;
+    height: 19px;
+    width: 420px;
+    border-radius: 100px;
+    border: 1px solid #ccc; 
+    padding: 16px 24px; 
+    font-size: 16px;
+   
+  }
+  
+*/
+
+
+
+.form {
+  max-width:  420px; ;
+ // background-color: aquamarine;
+
+
+  h2 {
+    text-align: center;
+  }
+
+  h3 {
+    display: block;
+    background-color:$greenMain ;
+    color: white;
+    padding:  8px 24px 8px 24px;
+    border-radius: 100px;
+
+  }
+
+  input  {
+    display: block;
+    height: 19px;
+    //max-width: 370px; /* Учитывается ширина границы (1px слева и 1px справа) */
+    width: 88%; /* Ширина будет занимать 100% доступной ширины родительского элемента */
+
+    border-radius: 100px;
+    border: 1px solid #ccc; /* Добавьте границу по вашему выбору */
+    padding: 16px 24px; /* Добавьте отступы по вашему выбору */
+    font-size: 16px; /* Добавьте размер шрифта по вашему выбору */
+    /* Другие стили по вашему выбору */
+  }
+
+  &--submit {
+    display: block;
+    height: 44px;
+    width: 88%; /* Ширина будет занимать 100% доступной ширины родительского элемента */
+    border-radius: 100px;
+    border: 1px solid #ccc; /* Добавьте границу по вашему выбору */
+    font-size: 16px; /* Добавьте размер шрифта по вашему выбору */
+    background-color: $greenMain ;
+    text-align: center; /* Центрирование текста внутри кнопки */
+    padding: 5px 24px; /* Добавьте отступы по вашему выбору */
+    color: white;
+    
+  }
+
+
+  &--btn {
+    font-weight: 400;
+    color: $greenMain ;
+    //text-align: center;
+   // text-decoration: underline;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &_modified {
+      color: $greenMain ;
+      text-decoration: underline;
+    }
+  }
+
+  input.error,
+  p.error {
+    border-color: red;
+    color: red;
+  }
+
+}

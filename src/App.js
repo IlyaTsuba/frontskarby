@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Enter from './pages/enter';
 import MainLayout from './layouts/MainLayout'; 
+import "./scss/app.scss"
 
 
 
@@ -18,8 +19,6 @@ const App = () => {
         path=""
         element={<Enter />}
       />
-
-
 
     </Route>
   </Routes>
