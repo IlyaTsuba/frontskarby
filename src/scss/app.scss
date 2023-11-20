@@ -5,20 +5,34 @@
 
 
 body {
- // background-color: $background;
   padding: 0 calc(20px - (100vw - 100%)) 0 0;
 }
 
 .wrapper {
   width: calc(100vw - 100px);
   height: 100%;
-  background-color: #fff;
-  margin: 50px auto;
+  background-color: #f9e6e6;
+  margin: 20px auto;
   border-radius: 10px;
   max-width: 1400px;
+  background-color:rgb(255, 255, 255)
+}
 
-  @media (max-width: 645px) {
-    width: calc(100vw - 30px);
-    margin-top: 15px;
+
+.authorization {
+  background-color: rgb(226, 216, 216) ;
+  display: flex;
+  justify-content: space-between;
+  //padding-right: 110px;
+  margin-top: 36px;
+
+
+  &--form {
+    width: 100%;  //408px;
+    display: flex;
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+    background-color: rgb(255, 252, 249)
   }
+
 }

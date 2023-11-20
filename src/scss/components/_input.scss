@@ -19,30 +19,32 @@ input {
 
 .form {
   max-width:  420px; ;
- // background-color: aquamarine;
-
+  background-color: rgb(255, 255, 255);
 
   h2 {
     text-align: center;
+    font-weight: 600;
+    font-size: 40px;
   }
 
   h3 {
+    margin-top: 15px;
     display: block;
     background-color:$greenMain ;
     color: white;
     padding:  8px 24px 8px 24px;
     border-radius: 100px;
-
   }
 
   input  {
+    margin-top: 30px;
     display: block;
     height: 19px;
     //max-width: 370px; /* Учитывается ширина границы (1px слева и 1px справа) */
     width: 88%; /* Ширина будет занимать 100% доступной ширины родительского элемента */
 
     border-radius: 100px;
-    border: 1px solid #ccc; /* Добавьте границу по вашему выбору */
+    border: 1px solid #f8f2f2; /* Добавьте границу по вашему выбору */
     padding: 16px 24px; /* Добавьте отступы по вашему выбору */
     font-size: 16px; /* Добавьте размер шрифта по вашему выбору */
     /* Другие стили по вашему выбору */
@@ -53,17 +55,19 @@ input {
     height: 44px;
     width: 88%; /* Ширина будет занимать 100% доступной ширины родительского элемента */
     border-radius: 100px;
-    border: 1px solid #ccc; /* Добавьте границу по вашему выбору */
+    border: 1px solid #579C73; /* Добавьте границу по вашему выбору */
     font-size: 16px; /* Добавьте размер шрифта по вашему выбору */
     background-color: $greenMain ;
     text-align: center; /* Центрирование текста внутри кнопки */
     padding: 5px 24px; /* Добавьте отступы по вашему выбору */
     color: white;
-    
+    margin-top: 44px;
+
   }
 
 
   &--btn {
+    margin-top: 16px;
     font-weight: 400;
     color: $greenMain ;
     //text-align: center;
@@ -73,6 +77,8 @@ input {
     align-items: center;
 
     &_modified {
+      margin-top: 20px;
+
       color: $greenMain ;
       text-decoration: underline;
     }
