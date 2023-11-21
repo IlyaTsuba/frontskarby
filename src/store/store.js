@@ -42,13 +42,13 @@ export default class Store {
 
 
     // Регистрация 
-    async Registration(email, password, name ) {
+    async Registration(email, name, password ) {
 
         console.log(email, name, password, 'то что пришло в функцию' ); // Отправка данных формы
 
 
         try {
-            const response = await AuthService.registration(email, password, name )
+            const response = await AuthService.registration(email, name, password )
             localStorage.setItem('token', response.data.accessToken )
             this.setAuth(true)
             this.setUser(response.data.user)
