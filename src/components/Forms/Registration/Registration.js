@@ -1,15 +1,19 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
-import AuthService from '../../../services/AuthService';
+//import AuthService from '../../../services/AuthService';
 import { Context } from '../../..';
 
 
 
 const Registration = () => {
+
+
+  
   const { register, handleSubmit, formState: { errors } } = useForm();
   const { store } = useContext(Context)
 
 
+  console.log(store.isAuth,'- магазин')
   
 
   const onSubmit = (data) => {

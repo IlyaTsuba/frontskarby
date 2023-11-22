@@ -18,10 +18,9 @@ export default class AuthService {
 
 
 
-
-
     // Авторизация 
     static async login ( email, password ) {
+        console.log('Функция в сервисе',email, password  )
         return  $api.post('/users/auth/jwt/create/' , {email, password})
     }
 

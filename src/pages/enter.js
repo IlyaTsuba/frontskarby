@@ -8,6 +8,10 @@ import img_present from '../assets/image/Pic.svg'
 
 const Enter = () => {
 
+//    <Registration />
+
+
+
   return (
   <div className="authorization">
 
@@ -16,7 +20,7 @@ const Enter = () => {
     </div>
 
     <div className="authorization--form"> 
-    <Registration />
+    <Auth />
     </div>
 
   </div>
