@@ -33,8 +33,14 @@ export default class Store {
 
         try {
             const response = await AuthService.login(email, password)
+            // Предположим, у вас есть refresh token
+            let refreshToken = response.data.refresh;
+            console.log(refreshToken)
+            document.cookie = refreshToken;
+
             console.log(response, '- ответ от сервера')
-            localStorage.setItem('token', response.data.accessToken )
+            localStorage.setItem('token', response.data.access )
+            // console.log(response.data.access)
             this.setAuth(true)
             this.setUser(response.data.user)
         } catch (e) {
