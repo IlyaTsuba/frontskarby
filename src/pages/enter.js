@@ -6,10 +6,14 @@ import img_present from '../assets/image/Pic.svg'
 
 
 
-const Enter = () => {
+const Enter = ( props ) => {
 
-//    <Registration />
 
+  //console.log(props.Registration, ' пропсы ')
+
+  const RegistrationComponent = props.form;
+
+  console.log( RegistrationComponent, ' пропсы ')
 
 
   return (
@@ -19,8 +23,9 @@ const Enter = () => {
       <img src={img_present} alt="Изображение" />
     </div>
 
+
     <div className="authorization--form"> 
-    <Auth />
+    <RegistrationComponent />
     </div>
 
   </div>

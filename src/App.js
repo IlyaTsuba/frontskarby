@@ -5,8 +5,8 @@ import MainLayout from './layouts/MainLayout';
 import "./scss/app.scss"
 
 
-
-
+import Registration from "./components/Forms/Registration/Registration"
+import Auth from "./components/Forms/Login/Auth"
 
 const App = () => {
   return (
@@ -15,14 +15,25 @@ const App = () => {
       path="/"
       element={<MainLayout />}
     >
+
+
       <Route
-        path=""
-        element={<Enter />}
+        path="/authorization"
+        element={<Enter  form={Auth}   />}
       />
+
+      <Route
+        path="/registration"
+        element={<Enter   form={Registration} />}
+      />
+
+
 
     </Route>
   </Routes>
   );
 };
+
+//<Route path="/enter" element={<Enter Registration={Registration} />} />
 
 export default App;
