@@ -34,8 +34,12 @@ export default class Store {
         try {
             const response = await AuthService.login(email, password)
             console.log(response, '- ответ от сервера')
-            localStorage.setItem('token', response.data.accessToken )
+            localStorage.setItem('token', response.data.access)
             this.setAuth(true)
+
+            console.log(this.isAuth)
+
+
             this.setUser(response.data.user)
         } catch (e) {
             console.log(e, '- общая ошибка')
@@ -53,7 +57,7 @@ export default class Store {
 
         try {
             const response = await AuthService.registration(email, name, password )
-            localStorage.setItem('token', response.data.accessToken )
+            localStorage.setItem('token', response.data.access )
             this.setAuth(true)
             this.setUser(response.data.user)
         } catch (e) {
