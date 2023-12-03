@@ -2,10 +2,7 @@ import { useDispatch } from 'react-redux'
 import '../../../scss/components/_signUp.scss'
 import { useState } from 'react';
 import { registration } from '../../../store/action_creators';
-<<<<<<< HEAD
 import { Error } from '../../Error/Error'
-=======
->>>>>>> 06c3e43373360997c6550ab1002b3fd3b8012ce4
 
 const Registration = () => {
   const dispatch = useDispatch();
@@ -16,7 +13,6 @@ const Registration = () => {
     password: '',
   })
 
-<<<<<<< HEAD
   const [error, setError] = useState({
     email: '',
     username: '',
@@ -55,13 +51,6 @@ const Registration = () => {
       [title]: e.target.value,
     })
     handleError(title, e.target.value);
-=======
-  const handle = (e, type) => {
-    setInput({
-      ...input,
-      [type]: e.target.value,
-    })
->>>>>>> 06c3e43373360997c6550ab1002b3fd3b8012ce4
   }
 
   return (
@@ -82,36 +71,23 @@ const Registration = () => {
           className='block-w-form__inpt' 
           placeholder='Увядзіце пошту'
           type='email'
-<<<<<<< HEAD
           title='email'
           value={input.email}
           onChange={handle('email')}
         />
         {error && <Error error={error.email} />}
-=======
-          value={input.email}
-          onChange={(val) => handle(val, 'email')}
-        />
->>>>>>> 06c3e43373360997c6550ab1002b3fd3b8012ce4
         <h5 className='block-w-form__text'>
           Ім’я
         </h5>
         <input
           className='block-w-form__inpt'
           placeholder='Увядзіце ім’я'
-<<<<<<< HEAD
           type='text'
           title='username'
           value={input.username}
           onChange={handle('username')}
         />
         {error && <Error error={error.username} />}
-=======
-          type='userName'
-          value={input.userName}
-          onChange={(val) => handle(val, 'username')}
-        />
->>>>>>> 06c3e43373360997c6550ab1002b3fd3b8012ce4
         <h5 className='block-w-form__text'>
           Пароль
         </h5>
@@ -119,17 +95,11 @@ const Registration = () => {
           className='block-w-form__inpt'
           placeholder='Прыдумайце пароль'
           type='password'
-<<<<<<< HEAD
           title='password'
           value={input.password}
           onChange={handle('password')}
         />
         {error && <Error error={error.password}/>}
-=======
-          value={input.password}
-          onChange={(val) => handle(val, 'password')}
-        />
->>>>>>> 06c3e43373360997c6550ab1002b3fd3b8012ce4
       </div>
       <button 
         className='container-signUp-form__btn'
