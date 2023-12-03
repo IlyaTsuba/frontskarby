@@ -1,0 +1,22 @@
+@mixin log-main {
+  .container-log {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 36px;
+    padding: 0 70px;
+    .container-log__block-img-a-form {
+      display: inline-flex;
+      align-items: center;
+      gap: 110px;
+      .block-w-image {
+        display: inline-flex;
+        gap: 20px;
+        .block-w-image__item-1,
+        .block-w-image__item-2,
+        .block-w-image__item-3 {
+          border-radius: 28px;
+        }
+      }
+    }
+  }
+}
