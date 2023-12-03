@@ -1,9 +1,10 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
-const RegistrationConfirmation = (props) => {
-  const {text, email} = props;
+const RegistrationConfirmation = () => {
+  const userInfo = useSelector(state => state.user.user)
+  const {text, email} = userInfo;
   return (
     <div className='container-registrationConfirmation'>
       <div className='container-registrationConfirmation_block'>
