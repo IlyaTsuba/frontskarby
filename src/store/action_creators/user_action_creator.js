@@ -6,6 +6,7 @@ import {
   SET_USER 
 } from '../action_types'
 import { takeEvery, put } from 'redux-saga/effects'
+import { getToken } from '../../utils'
 
 
 const activateRegistration = (activationInfo) => ({
@@ -33,7 +34,7 @@ const setUser = (userInfo) => ({
 })
 
 function* fetchActivationRegistration(action) {
-  const response = yield fetch('https://studapi.teachmeskills.by/auth/users/activation/', {
+  const response = yield fetch('http://127.0.0.1:8000/swagger/users/auth/users/activation/', {
     method: 'POST',
     headers: {
       'Content-type': 'application/json'
@@ -46,7 +47,6 @@ function* fetchActivationRegistration(action) {
 }
 
 function* fetchRegistration(action) {
-  console.log(action)
   const response = yield fetch('http://127.0.0.1:8000/users/auth/users/', {
     method: 'POST',
     headers: {
@@ -54,26 +54,25 @@ function* fetchRegistration(action) {
     },
     body: JSON.stringify(action.user)
   })
-  console.log(response)
-  // if (response.status === 201) {
-  //   window.location.pathname = '/registration'
-  // }
+  if (response.status === 201) {
+    window.location.pathname = '/registration'
+  }
 }
 
 function* fetchUserDataBase() {
-  // const token = yield getToken();
-  // const response = yield fetch('https://studapi.teachmeskills.by/auth/users/me/', {
-  //   headers: { 
-  //     'Authorization': `Bearer ${token}`,
-  //   }
-  // });
-  // const data = yield response.json();
-  // yield put(setUser(data))
-  // window.location.pathname = '/posts'
+  const token = yield getToken();
+  const response = yield fetch('http://127.0.0.1:8000/swagger/auth/users/me/', {
+    headers: { 
+      'Authorization': `Bearer ${token}`,
+    }
+  });
+  const data = yield response.json();
+  yield put(setUser(data))
+  window.location.pathname = '/'
 }
 
 function* fetchSignIn(action) {
-  const response = yield fetch('https://studapi.teachmeskills.by/auth/jwt/create/', {
+  const response = yield fetch('http://127.0.0.1:8000/swagger/users/auth/jwt/create/', {
     method: 'POST',
     headers: {
       'Content-type': 'application/json'
