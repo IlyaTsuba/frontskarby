@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 //import AuthService from '../../../services/AuthService';
 import { Context } from '../../..';
+import { Link } from 'react-router-dom';
 
 
 
@@ -95,7 +96,10 @@ const Registration = () => {
 
        <div className='form--btn'> 
 
-       <span>Ужо ёсць акаунт ?</span>
+
+       <Link to="/authorization">
+         <button><span>Ужо ёсць акаунт ?</span>   </button>
+        </Link>
 
         <button className='form--btn_modified'>Забылi пароль ?</button>
        
