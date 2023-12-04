@@ -54,12 +54,10 @@ function* fetchRegistration(action) {
     },
     body: JSON.stringify(action.user)
   })
-  
-  const data = yield response.json()
-
   if (response.status === 201) {
-    yield put(setUser(data));
-    window.location.pathname = '/registration'
+    const userData = response.json().then(data => console.log(data));
+    yield put(setUser(userData))
+    // window.location.pathname = '/registration'
   }
 }
 

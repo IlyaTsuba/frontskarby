@@ -7,7 +7,8 @@ import {
   Footer, 
   RegistrationActivation, 
   RegistrationConfirmation, 
-  SignUp
+  SignUp,
+  HomePage
 } from './components';
 
 const App = () => {
@@ -18,7 +19,7 @@ const App = () => {
       
       <Route path='/'>
         
-        <Route index element={<div>HomePage</div>} />
+        <Route index element={<HomePage />} />
         
         <Route path='sign-up' element={<SignUp />} />
         <Route path='sign-in' element={<SignIn />} />

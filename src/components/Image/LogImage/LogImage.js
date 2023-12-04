@@ -1,4 +1,4 @@
-import { image_1, image_2, image_3 } from '../../assets/image/var/var-img'
+import { image_1, image_2, image_3 } from '../../../assets/image/var/var-img'
 
 const LogImage = () => {
   return (

@@ -1,6 +1,6 @@
 import '../../scss/components/_signIn.scss'
 import { Authorization } from '../Forms'
-import { LogImage } from '../LogImage'
+import { LogImage } from '../Image'
 
 const SignIn = () => {
   return (

@@ -1,4 +1,4 @@
-import { LogImage } from "../LogImage"
+import { LogImage } from "../Image"
 import { Restore } from "../Forms"
 
 const RestorePass = () => {

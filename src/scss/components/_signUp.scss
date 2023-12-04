@@ -1,4 +1,5 @@
 @import '../variables';
+@import '../mixins';
 
 .container-signUp-form {
   display: flex;
@@ -89,4 +90,8 @@
     line-height: 130%;
     text-decoration: underline;
   }
+}
+
+.container-registrationConfirmation {
+  @include confirmed-RegistrationConfirmation();
 }

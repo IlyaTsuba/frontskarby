@@ -1,5 +1,5 @@
 import { Registration } from "../Forms";
-import { LogImage } from "../LogImage";
+import { LogImage } from "../Image";
 
 
 const SignUp = () => {

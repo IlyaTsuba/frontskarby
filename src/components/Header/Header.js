@@ -1,24 +1,32 @@
 import React from 'react';
 import '../../scss/components/_header.scss'
+import { Link, useLocation } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Header = () => {
-    return (
-        <header className='container-header'>
-
-          <h1 className='container-header__title'>Skarby</h1>
-
-        <nav className='navigate'>
-          <ul className='navigate-list'>
-            <div className='block-w-link'>
-              <li className='block-w-link__list'>
+  const location = useLocation()
+  const userInfo = useSelector(state => state.user.user)
+  return (
+    <header className='container-header'>
+      <Link to = '/' onClick={() => window.location.reload()}>
+        <h1 className='container-header__title'>Skarby</h1>
+      </Link>
+      <nav className='navigate'>
+        <ul className='navigate-list'>
+          <div className='block-w-link'>
+            <Link to = '/'>
+              <li className={location.pathname !== '/' ? `block-w-link__list` : `block-w-link__list hover`}>
                 Галоуная
               </li>
-              <li className='block-w-link__list'>
-                Рамяство
-              </li>
-            </div>
+            </Link>
+            <li className='block-w-link__list'>
+              Рамяство
+            </li>
+          </div>
+          <Link to = {!userInfo ? `/sign-in` : `/user/acc` } >
             <li className='navigate-list'>
-              Увайсці
+              
+              {!userInfo ? 'Увайсці' : ''}{/* {userinfo?.name} */}
 
               <div className='navigate-list__icon'>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -27,10 +35,11 @@ const Header = () => {
               </div>
             
             </li>
-          </ul>
-        </nav>
-      </header>
-    );
+          </Link>
+        </ul>
+      </nav>
+    </header>
+  );
 };
 
 export { Header };
