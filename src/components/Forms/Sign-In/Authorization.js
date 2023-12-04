@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux'
 import { useState } from 'react'
 import '../../../scss/components/_signIn.scss'
+import { signIn } from '../../../store/action_creators'
 
 
 const Authorization = () => {
@@ -52,6 +53,7 @@ const Authorization = () => {
       </div>
       <button 
         className='container-signIn-form__btn'
+        onClick={ () => dispatch(signIn(input))}
       > Увайсці </button>
       <a 
         href='/restore' 
