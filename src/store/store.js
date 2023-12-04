@@ -17,6 +17,7 @@ const store = createStore(combineReducers({
 
 const handleChange = () => {
   const currentValue = store.getState()
+  console.log(currentValue)
   localStorage.setItem('user', `${JSON.stringify(currentValue.user)}`);
 }
 

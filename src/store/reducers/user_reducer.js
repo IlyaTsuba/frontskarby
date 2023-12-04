@@ -10,6 +10,7 @@ const cacheState = () => {
 }
 
 export default (state = cacheState(), action) => {
+  console.log(action);
   switch (action.type) {
     case SET_USER: {
       return ({
