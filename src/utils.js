@@ -8,7 +8,7 @@ function* getToken() {
   const tokenRefresh = {
     refresh: refreshToken
   }
-  const response = yield fetch('http://127.0.0.1:8000/swagger/auth/jwt/verify/', {
+  const response = yield fetch('http://127.0.0.1:8000/users/auth/jwt/verify/', {
     method: 'POST',
     headers: {
       'Content-type': 'application/json'
@@ -18,7 +18,7 @@ function* getToken() {
   if (response.status === 200) {
     return accessToken
   } else {
-    const response = yield fetch('http://127.0.0.1:8000/swagger/auth/jwt/refresh/', {
+    const response = yield fetch('http://127.0.0.1:8000/users/auth/jwt/refresh/', {
       method: 'POST',
       headers: {
         'Content-type': 'application/json'

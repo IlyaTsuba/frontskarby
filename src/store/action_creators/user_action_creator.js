@@ -34,7 +34,7 @@ const setUser = (userInfo) => ({
 })
 
 function* fetchActivationRegistration(action) {
-  const response = yield fetch('http://127.0.0.1:8000/swagger/users/auth/users/activation/', {
+  const response = yield fetch('http://127.0.0.1:8000/users/auth/users/activation/', {
     method: 'POST',
     headers: {
       'Content-type': 'application/json'
@@ -55,15 +55,13 @@ function* fetchRegistration(action) {
     body: JSON.stringify(action.user)
   })
   if (response.status === 201) {
-    // const userData = response.json().then(data => console.log(data));
-    // yield put(setUser(userData))
     window.location.pathname = '/registration'
   }
 }
 
 function* fetchUserDataBase() {
   const token = yield getToken();
-  const response = yield fetch('http://127.0.0.1:8000/swagger/auth/users/me/', {
+  const response = yield fetch('http://127.0.0.1:8000/user/auth/users/me/', {
     headers: { 
       'Authorization': `Bearer ${token}`,
     }
@@ -74,7 +72,7 @@ function* fetchUserDataBase() {
 }
 
 function* fetchSignIn(action) {
-  const response = yield fetch('http://127.0.0.1:8000/swagger/users/auth/jwt/create/', {
+  const response = yield fetch('http://127.0.0.1:8000/users/auth/jwt/create/', {
     method: 'POST',
     headers: {
       'Content-type': 'application/json'
