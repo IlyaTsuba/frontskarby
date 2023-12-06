@@ -3,7 +3,7 @@ import { Banner } from "./Banner"
 import { NewAccounts } from "./NewAccounts"
 import '../../scss/components/_homePage.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { useEffect } from "react"
+import { useEffect, useMemo } from "react"
 import { loadAccounts, loadArticles } from "../../store/action_creators"
 
 const HomePage = () => {
@@ -13,10 +13,14 @@ const HomePage = () => {
   // const page = useSelector(state => state.currentPage.currentPage)
   const dispatch = useDispatch()
 
+  const memoizedAccounts = useMemo(() => accounts, [accounts])
+  const memoizedArticles = useMemo(() => articles, [articles])
+
+
   useEffect(() => {
-    dispatch(loadArticles(articles))
-    dispatch(loadAccounts(accounts))
-  }, [])
+    dispatch(loadArticles(memoizedArticles))
+    dispatch(loadAccounts(memoizedAccounts))
+  }, [dispatch])
 
   return (
     <main className='container-homePage'>

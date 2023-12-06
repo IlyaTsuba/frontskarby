@@ -23,7 +23,7 @@ const NewAccounts = ({accounts}) => {
   return (
     <article className='block-w-newAccounts'>
       <p className='block-w-newAccounts__title'>Новыя акаўнты</p>
-      {Row(accounts?.results).map(el => 
+      {Row(accounts).map(el => 
         <RowPostAccounts 
           key={el}
           accounts={el}

@@ -17,6 +17,7 @@ const setAccounts = (accounts) => ({
 function* fetchLoadAccounts (action) {
   const response = yield fetch(`http://127.0.0.1:8000/accounts`)
   const data = yield response.json()
+  console.log(data)
   yield put(setAccounts(data))
 }
 
