@@ -61,7 +61,7 @@ function* fetchRegistration(action) {
 
 function* fetchUserDataBase() {
   const token = yield getToken();
-  const response = yield fetch('http://127.0.0.1:8000/user/auth/users/me/', {
+  const response = yield fetch('http://127.0.0.1:8000/users/auth/users/me/', {
     headers: { 
       'Authorization': `Bearer ${token}`,
     }

@@ -83,3 +83,29 @@
     }
   }
 }
+
+@mixin btn-more {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 4px 4px 4px 20px;
+  border: 0.5px solid $primaryGreen;
+  border-radius: 28px;
+  .border-to-svg {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $primaryGreen;
+    border-radius: 100px;
+    svg {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

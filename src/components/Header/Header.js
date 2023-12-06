@@ -26,7 +26,7 @@ const Header = () => {
           <Link to = {!userInfo ? `/sign-in` : `/user/acc` } >
             <li className='navigate-list'>
               
-              {!userInfo ? 'Увайсці' : ''}{/* {userinfo?.name} */}
+              {!userInfo ? 'Увайсці' : userInfo.username}
 
               <div className='navigate-list__icon'>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

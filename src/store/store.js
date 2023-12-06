@@ -1,18 +1,22 @@
 import { combineReducers, createStore, applyMiddleware } from "redux";
-import user_reducer from './reducers/user_reducer'
 import { all } from 'redux-saga/effects';
-import { watcherUser } from "./action_creators";
+import { watcherAccounts, watcherArticles, watcherUser } from "./action_creators";
 import createSagaMiddleware from 'redux-saga';
+import { accounts, user, articles } from "./reducers";
 
 const sagaMiddleware = createSagaMiddleware();
 function* rootSaga(){
   yield all([
+    watcherArticles(),
+    watcherAccounts(),
     watcherUser()
   ])
 }
 
 const store = createStore(combineReducers({
-  user: user_reducer,
+  user: user,
+  accounts: accounts,
+  articles: articles,
 }), applyMiddleware(sagaMiddleware))
 
 const handleChange = () => {
