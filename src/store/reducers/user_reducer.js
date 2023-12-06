@@ -9,7 +9,7 @@ const cacheState = () => {
   return userInfo ? JSON.parse(userInfo) : initialState;
 }
 
-export default (state = cacheState(), action) => {
+const user = (state = cacheState(), action) => {
   switch (action.type) {
     case SET_USER: {
       return ({

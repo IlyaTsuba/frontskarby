@@ -25,7 +25,7 @@ const App = () => {
         <Route path='sign-in' element={<SignIn />} />
         <Route path='registration' element={<RegistrationConfirmation />} />
         <Route path='confirmed' element={<Confirmed />} />
-        <Route path={'activate/:uid/:token'} element={<RegistrationActivation />} />
+        {/* <Route path={'activate/:uid/:token'} element={<RegistrationActivation />} /> */}
       </Route>
     
     </Routes>

@@ -7,6 +7,7 @@ const PostAccount = ({account}) => {
       <img 
         className='block-account__image'
         src={account.avatar}
+        alt='image1'
       />
       <button
           className='block-w-post-acc__link-more'

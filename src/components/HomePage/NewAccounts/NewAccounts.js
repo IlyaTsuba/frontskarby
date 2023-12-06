@@ -5,13 +5,13 @@ const Row = (arr) => {
   let resultArr = [];
   for (let i = 0, isFirst = true; i < arr?.length;) {
     if (isFirst) { 
-      const tempArr = [arr[i], arr[i+1]].filter((el) => el);
-      if (tempArr?.length > 0) resultArr.push(tempArr);
+      const tempArr = [arr[i], arr[i+1]]?.filter((el) => el);
+      if (tempArr?.length > 0) resultArr?.push(tempArr);
       i += 2;
       isFirst = false;
     } else {
-      const tempArr = [arr[i], arr[i+1]].filter((el) => el);
-      if (tempArr?.length > 0) resultArr.push(tempArr);
+      const tempArr = [arr[i], arr[i+1]]?.filter((el) => el);
+      if (tempArr?.length > 0) resultArr?.push(tempArr);
       i += 2;
     }
   }

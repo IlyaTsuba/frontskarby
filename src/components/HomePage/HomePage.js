@@ -10,6 +10,7 @@ const HomePage = () => {
 
   const articles = useSelector(state => state.articles.articles)
   const accounts = useSelector(state => state.accounts.accounts)
+  // const page = useSelector(state => state.currentPage.currentPage)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -17,8 +18,6 @@ const HomePage = () => {
     dispatch(loadAccounts(accounts))
   }, [])
 
-  console.log(accounts)
-  console.log(articles)
   return (
     <main className='container-homePage'>
       <Banner />
