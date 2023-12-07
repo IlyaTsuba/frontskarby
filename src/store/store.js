@@ -20,8 +20,7 @@ const store = createStore(combineReducers({
 }), applyMiddleware(sagaMiddleware))
 
 const handleChange = () => {
-  const currentValue = store.getState()
-  console.log(currentValue)
+  const currentValue = store.getState() 
   localStorage.setItem('user', `${JSON.stringify(currentValue.user)}`);
 }
 

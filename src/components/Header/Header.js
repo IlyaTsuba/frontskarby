@@ -8,7 +8,7 @@ const Header = () => {
   const userInfo = useSelector(state => state.user.user)
   return (
     <header className='container-header'>
-      <Link to = '/' onClick={() => window.location.reload()}>
+      <Link to = '/'>
         <h1 className='container-header__title'>Skarby</h1>
       </Link>
       <nav className='navigate'>
@@ -23,7 +23,7 @@ const Header = () => {
               Рамяство
             </li>
           </div>
-          <Link to = {!userInfo ? `/sign-in` : `/user/acc` } >
+          <Link to = {userInfo ? `/user/acc` : `/sign-in` } >
             <li className='navigate-list'>
               
               {!userInfo ? 'Увайсці' : userInfo.username}

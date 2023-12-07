@@ -1,5 +1,5 @@
 import { Articles } from "./Articles"
-import { Banner } from "./Banner"
+import { BannerHomePage } from "./BannerHomePage"
 import { NewAccounts } from "./NewAccounts"
 import '../../scss/components/_homePage.scss'
 import { useDispatch, useSelector } from 'react-redux'
@@ -18,13 +18,13 @@ const HomePage = () => {
 
 
   useEffect(() => {
-    dispatch(loadArticles(memoizedArticles))
-    dispatch(loadAccounts(memoizedAccounts))
-  }, [dispatch])
-
+    dispatch(loadArticles(articles))
+    dispatch(loadAccounts(accounts))
+  }, [])
+  
   return (
     <main className='container-homePage'>
-      <Banner />
+      <BannerHomePage />
       <section className='section-interesting'>
         <Articles articles = {articles} />
         <NewAccounts accounts = {accounts} />

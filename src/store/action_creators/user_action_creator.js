@@ -34,7 +34,7 @@ const setUser = (userInfo) => ({
 })
 
 function* fetchActivationRegistration(action) {
-  const response = yield fetch('http://127.0.0.1:8000/users/auth/users/activation/', {
+  const response = yield fetch('http://127.0.0.1:8000/users/accounts/', {
     method: 'POST',
     headers: {
       'Content-type': 'application/json'

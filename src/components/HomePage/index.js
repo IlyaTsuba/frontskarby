@@ -1,4 +1,4 @@
 export * from './HomePage'
-export * from './Banner'
+export * from './BannerHomePage'
 export * from './Articles'
 export * from './NewAccounts'

@@ -8,7 +8,8 @@ import {
   RegistrationActivation, 
   RegistrationConfirmation, 
   SignUp,
-  HomePage
+  HomePage,
+  News
 } from './components';
 
 const App = () => {
@@ -20,7 +21,8 @@ const App = () => {
       <Route path='/'>
         
         <Route index element={<HomePage />} />
-        
+        <Route path='news' element={<News />} />
+
         <Route path='sign-up' element={<SignUp />} />
         <Route path='sign-in' element={<SignIn />} />
         <Route path='registration' element={<RegistrationConfirmation />} />

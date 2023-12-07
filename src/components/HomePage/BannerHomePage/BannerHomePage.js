@@ -1,8 +1,7 @@
 import { HomePageBanner } from "../../Image"
 import { Link } from "react-router-dom"
 
-
-const Banner = () => {
+const BannerHomePage = () => {
   return (
     <article className='block-banner'>
       <div className='block-w-text'>
@@ -22,4 +21,4 @@ const Banner = () => {
   )
 }
 
-export { Banner }
+export { BannerHomePage }

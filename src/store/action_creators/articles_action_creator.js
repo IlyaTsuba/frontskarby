@@ -15,7 +15,7 @@ const setArticles = (articles) => ({
 })
 
 function* fetchLoadArticles (action) {
-  const response = yield fetch(`http://127.0.0.1:8000/accounts`)
+  const response = yield fetch(`http://127.0.0.1:8000/articles`)
   const data = yield response.json()
   yield put(setArticles(data))
 }

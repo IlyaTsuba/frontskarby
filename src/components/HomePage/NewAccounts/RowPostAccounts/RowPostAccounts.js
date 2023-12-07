@@ -1,16 +1,11 @@
 import { PostAccount } from "./PostAccounts"
 
 const RowPostAccounts = ({accounts}) => {
-
+const posts = accounts.map(el => <PostAccount key={el.slug} account={el} />)
   return (
     <div className='block-w-post-accounts'>
-      { accounts.length === 2 ?
-      <>
-        <PostAccount account={accounts[0]} />
-        <PostAccount account={accounts[1]} />
-      </>
-        :
-      <PostAccount account={accounts[0]} />
+      { 
+        posts
       }
     </div>
   )
