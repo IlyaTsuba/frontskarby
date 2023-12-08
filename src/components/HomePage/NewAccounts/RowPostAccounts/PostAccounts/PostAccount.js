@@ -1,4 +1,4 @@
-import { Button } from "../../../../Button/Button"
+import { ButtonMore } from "../../../../Buttons/ButtonMore"
 
 
 const PostAccount = ({account}) => {
@@ -9,7 +9,7 @@ const PostAccount = ({account}) => {
         src={account?.avatar}
         alt='image1'
       />
-      <Button onClick={() => window.location.pathname = '/accounts'} />
+      <ButtonMore onClick={() => window.location.pathname = '/accounts'} />
     </div>
   )
 }

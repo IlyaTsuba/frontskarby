@@ -1,6 +1,6 @@
 
 
-const Button = ({onClick}) => {
+const ButtonMore = ({onClick}) => {
   return (
     <button
       className='btn-more'
@@ -18,4 +18,4 @@ const Button = ({onClick}) => {
   )
 }
 
-export { Button }
+export { ButtonMore }

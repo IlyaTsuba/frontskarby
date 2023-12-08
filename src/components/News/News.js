@@ -2,6 +2,7 @@ import { BannerNews } from "./Banner"
 import { Navigate } from "./Navigate"
 import '../../scss/components/_news.scss'
 import { BlockNews } from "./BlockNews"
+import { BlockTop } from "./BlockTop"
 
 
 const News = () => {
@@ -13,6 +14,8 @@ const News = () => {
       <Navigate />
 
       <BlockNews />
+
+      <BlockTop />
     </main>
   )
 }

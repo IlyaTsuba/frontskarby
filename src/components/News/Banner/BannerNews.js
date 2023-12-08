@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { Button } from '../../index'
+import { ButtonMore } from '../../index'
 
 const BannerNews = () => {
   return (
@@ -15,7 +15,7 @@ const BannerNews = () => {
         </Link>
       </div>
       <div className='block-banner__btn'>
-        <Button onClick={() => window.location.pathname = '/posts'} />
+        <ButtonMore onClick={() => window.location.pathname = '/posts'} />
       </div>
     </article>
   )

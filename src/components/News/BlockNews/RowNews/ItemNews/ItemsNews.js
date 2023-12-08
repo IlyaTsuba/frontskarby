@@ -1,4 +1,4 @@
-import { Button } from "../../../../Button"
+import { ButtonMore } from "../../../../Buttons"
 
 const PostNews = ({post}) => {
 
@@ -18,7 +18,7 @@ const PostNews = ({post}) => {
             className='flex-block-w-btn__marks'
             onClick={() => window.location.pathname = '/news'}
           > {post?.article_category} </button>
-          <Button onClick={() => window.location.pathname = '/posts'} />
+          <ButtonMore onClick={() => window.location.pathname = '/posts'} />
         </div>
       </div>
     </div>

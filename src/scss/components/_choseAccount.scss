@@ -1,0 +1,102 @@
+@import '../mixins';
+@import '../variables';
+
+.container-choseAccount {
+  max-width: 1300px;
+  margin: 24px auto 44px auto;
+  .block-w-title {
+    width: 100%;
+    height: 211px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 28px;
+    background-color: $white01;
+    .block-w-title__title {
+      font-size: 40px;
+      font-style: normal;
+      font-weight: 300;
+      line-height: 150%;
+    }
+  }
+  .block-account {
+    margin-top: 20px;
+    padding: 16px 28px 24px 36px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $white01;
+    border-radius: 28px;
+    .block-w-info-account {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      width: 42%;
+      .block-w-info-account__title {
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 150%;
+      }
+      .block-w-info-account__info {
+        width: 55%;
+        color: $black4;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+      }
+      .block-w-btn {
+        margin-top: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 26px;
+        .block-w-btn__mark {
+          display: flex;
+          width: 44px;
+          height: 44px;
+          padding: 4px;
+          justify-content: center;
+          align-items: center;
+          border-radius: 28px;
+          border: 1px solid $primaryGreen3;
+          background: $secondaryGreen8;
+          svg {
+            fill: $primaryGreen2;
+            width: 20px;
+            height: 20px;
+          }
+        }
+        .block-w-btn__link-on-instagram {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          border-radius: 100px;
+          border: 1px solid $primaryGreen3;
+          background: $secondaryGreen8;
+          padding: 0px 20px;
+          height: 44px;
+          .link-on-instagram {
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 130%;
+            text-decoration-line: underline;
+          }
+          svg {
+            width: 28px;
+            height: 28px;
+          }
+        }
+      }
+    }
+    .block-w-avatar {
+
+    }
+  }
+  .block-w-photo-account {
+
+  }
+}

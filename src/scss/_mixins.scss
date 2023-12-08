@@ -110,6 +110,37 @@
   }
 }
 
+@mixin btn-delete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 4px 4px 4px 20px;
+  border: 1px solid $secondaryGreen6;
+  background-color: $secondaryGreen5;
+  border-radius: 28px;
+  .border-to-svg {
+    display: flex;
+    width: 32px;
+    height: 32px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: 100px;
+    background-color: $secondaryGreen9;
+    svg {
+      fill: $white01;
+      width: 23px;
+      height: 19px;
+    }
+  }
+}
+
 @mixin banner {
   .block-w-text {
     color: $secondaryBlack;
@@ -135,6 +166,9 @@
     }
   }
 }
+
+
+
 
 @mixin block-post {
   display: flex;
