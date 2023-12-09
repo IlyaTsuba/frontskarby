@@ -1,7 +1,18 @@
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import '../../scss/components/_choseAccount.scss'
+import { useParams } from 'react-router-dom';
+import { loadPostAccount } from '../../store/action_creators';
+import { useEffect } from 'react';
 
 const ChoseAccount = () => {
+  const acc = useSelector(state => state.postsAccounts.selectedPostAccount)
+  const dispatch = useDispatch();
+  const {slug} = useParams()
+  useEffect(() => {
+    dispatch(loadPostAccount(slug))
+  }, [slug])
+
+  console.log(acc)
   return (
     <main className='container-choseAccount'>
       <div className='block-w-title'>

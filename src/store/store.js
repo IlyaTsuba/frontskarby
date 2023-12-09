@@ -1,27 +1,41 @@
-import { combineReducers, createStore, applyMiddleware } from "redux";
+import { 
+  combineReducers, 
+  createStore, 
+  applyMiddleware
+} from "redux";
 import { all } from 'redux-saga/effects';
-import { watcherAccounts, watcherArticles, watcherUser } from "./action_creators";
+import { 
+  watcherPostsAccounts, 
+  watcherUser,
+  watcherPostsArticles
+} from "./action_creators";
 import createSagaMiddleware from 'redux-saga';
-import { accounts, user, articles } from "./reducers";
+import { 
+  postsAccounts, 
+  user, 
+  postsArticles
+} from "./reducers";
+
 
 const sagaMiddleware = createSagaMiddleware();
 function* rootSaga(){
   yield all([
-    watcherArticles(),
-    watcherAccounts(),
+    watcherPostsArticles(),
+    watcherPostsAccounts(),
     watcherUser()
   ])
 }
 
 const store = createStore(combineReducers({
   user: user,
-  accounts: accounts,
-  articles: articles,
+  postsAccounts: postsAccounts,
+  postsArticles: postsArticles,
 }), applyMiddleware(sagaMiddleware))
 
 const handleChange = () => {
   const currentValue = store.getState() 
   localStorage.setItem('user', `${JSON.stringify(currentValue.user)}`);
+  // localStorage.setItem('accounts', `${JSON.stringify(currentValue.accounts)}`);
 }
 
 store.subscribe(handleChange)

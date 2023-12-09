@@ -24,7 +24,7 @@ const App = () => {
         
         <Route index element={<HomePage />} />
         <Route path='news' element={<News />} />
-        <Route path='accounts' element={<ChoseAccount />} />
+        <Route path={'accounts/:slug'} element={<ChoseAccount />} />
         <Route path='user/acc'>
           <Route index element={<UserAccount />} />
         </Route>

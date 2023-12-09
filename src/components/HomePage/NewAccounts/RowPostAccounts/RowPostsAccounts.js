@@ -1,6 +1,6 @@
 import { PostAccount } from "./PostAccounts"
 
-const RowPostAccounts = ({accounts}) => {
+const RowPostsAccounts = ({accounts}) => {
 const posts = accounts.map(el => <PostAccount key={el.slug} account={el} />)
   return (
     <div className='block-w-post-accounts'>
@@ -11,4 +11,4 @@ const posts = accounts.map(el => <PostAccount key={el.slug} account={el} />)
   )
 }
 
-export { RowPostAccounts }
+export { RowPostsAccounts }

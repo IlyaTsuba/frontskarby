@@ -1,2 +1,2 @@
 export * from './PostAccounts'
-export * from './RowPostAccounts'
+export * from './RowPostsAccounts'

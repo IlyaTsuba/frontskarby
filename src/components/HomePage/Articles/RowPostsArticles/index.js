@@ -1,2 +1,2 @@
 export * from './Article'
-export * from './RowPostArticles'
+export * from './RowPostsArticles'

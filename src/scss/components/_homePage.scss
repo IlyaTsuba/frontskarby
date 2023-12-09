@@ -33,11 +33,7 @@
       .block-w-post-articles {
         display: flex;
         gap: 20px;
-        .container-w-scroll {
-          .block-post {
-            @include block-post();
-          }
-        }
+        @include block-post();
       }
     }
     .block-w-newAccounts {
