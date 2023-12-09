@@ -11,7 +11,8 @@ import {
   HomePage,
   News,
   UserAccount,
-  ChoseAccount
+  SelectedPostAccount,
+  SelectedPostArticle
 } from './components';
 
 const App = () => {
@@ -24,7 +25,8 @@ const App = () => {
         
         <Route index element={<HomePage />} />
         <Route path='news' element={<News />} />
-        <Route path={'accounts/:slug'} element={<ChoseAccount />} />
+        <Route path={'accounts/:slug'} element={<SelectedPostAccount />} />
+        <Route path={'articles/:slug'} element={<SelectedPostArticle />} />
         <Route path='user/acc'>
           <Route index element={<UserAccount />} />
         </Route>

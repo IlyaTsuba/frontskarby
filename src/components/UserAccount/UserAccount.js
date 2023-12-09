@@ -4,6 +4,7 @@ import '../../scss/components/_userAccount.scss'
 
 const UserAccount = () => {
   const userInfo = useSelector(state => state.user.user)
+  const postInfo = useSelector(state => state.postsAccounts.postsMarkAccounts)
   return (
     <div className='container-userAccount'>
       <div className='block-userName'>
@@ -13,13 +14,11 @@ const UserAccount = () => {
         <div className='block-title'>
           <h2 className='block-title__title'>Захванае</h2>
         </div>
-        <Mark/>
-        <Mark/>
-        <Mark/>
-        <Mark/>
-        <Mark/>
-        <Mark/>
-        <Mark/>
+        {postInfo.length > 0 ?
+          postInfo.map(el => <Mark postInfo={el} key={el.slug}/>)
+          :
+          <p>Пусто</p>
+        }
       </section>
     </div>
   )

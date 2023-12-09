@@ -79,11 +79,15 @@
         align-items: flex-end;
         gap: 8px;
         width: 50%;
-        .btn-more {
-          @include btn-more();
-          background-color: $secondaryGreen8;
-          border: 1px solid $primaryGreen3;
-          width: 35%;
+        a {
+          width: 100%;
+          display: contents;
+          .btn-more {
+            @include btn-more();
+            background-color: $secondaryGreen8;
+            border: 1px solid $primaryGreen3;
+            width: 35%;
+          }
         }
         .btn-delete {
           @include btn-delete();

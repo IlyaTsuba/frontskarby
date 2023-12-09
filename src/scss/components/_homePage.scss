@@ -69,9 +69,13 @@
             object-fit: contain;
             // mix-blend-mode: color-burn;
           }
-          .btn-more {
-            @include btn-more();
-            width: 91%;
+          a {
+            width: 100%;
+            display: contents;
+            .btn-more {
+              @include btn-more();
+              width: 91%;
+            }
           }
         }
       }

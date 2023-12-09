@@ -218,7 +218,6 @@
         max-width: 310px;
         max-height: 210px;
         border-radius: 22px;
-        aspect-ratio: 3/2;
         object-fit: contain;
       }
     }
@@ -240,9 +239,13 @@
         border: .5px solid $primaryGreen;
         border-radius: 28px;
       }
-      .btn-more {
-        @include btn-more();
-        width: 40%;
+      a {
+        width: 100%;
+        display: contents;
+        .btn-more {
+          @include btn-more();
+          width: 40%;
+        }
       }
     }
   }

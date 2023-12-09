@@ -1,5 +1,0 @@
-export * from './Banner'
-export * from './BlockNews'
-export * from './BlockTop'
-export * from './Navigate'
-export * from './News'

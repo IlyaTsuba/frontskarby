@@ -1,0 +1,118 @@
+@import '../mixins';
+@import '../variables';
+
+
+.container-news {
+  max-width: 1300px;
+  margin: 24px auto 44px auto;
+  .block-banner {
+    width: 100%;
+    background: url(../../assets/image/News/backgroundNews.jpg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 49px;
+    padding: 20px 20px 15px 36px;
+    border-radius: 28px;
+    @include banner();
+    .block-banner__btn {
+      display: flex;
+      justify-content: flex-end;
+      a {
+        width: 100%;
+        display: contents;
+        .btn-more {
+          @include btn-more();
+          width: 20%;
+          background-color: $white01;
+        }
+      }
+    }
+  }
+  .block-navigate {
+    width: 100%;
+    background-color: $secondaryBlack;
+    display: inline-flex;
+    justify-content: space-between;
+    padding: 16px 20px;
+    margin: 24px 0;
+    border-radius: 28px;
+    .nav {
+      cursor: pointer;
+      padding: 8px 20px;
+      background-color: $white01;
+      border-radius: 100px;
+      font-family: 'Roboto';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%;
+    }
+    ._item-1 {
+      background-color: $primaryGreen;
+      color: $white01;
+    }
+  }
+  .section-news {
+    .block-row-w-post {
+      width: 49.23%;
+      @include block-post();
+    }
+    .block-row-w-posts {
+      display: inline-flex;
+      gap: 20px;
+      
+      @include block-post();
+    }
+  }
+  .block-w-top-info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 36px;
+    background-color: $white01;
+    border-radius: 28px;
+    padding: 16px 55px;
+    .block-w-Top-info__title {
+      color: $primaryGreen;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%;
+    }
+    .block-w-items {
+      .item-block-Top {
+        width: 100%;
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 17px;
+        border-bottom: .5px solid $primaryGreen;
+        .item-block-Top__text {
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 150%;
+          text-transform: uppercase;
+          margin-bottom: 15px;
+        }
+        .border-to-svg {
+          cursor: pointer;  
+          display: flex;
+          width: 36px;
+          height: 36px;
+          justify-content: center;
+          align-items: center;
+          flex-shrink: 0;
+          border-radius: 100px;
+          border: 1px solid $primaryGreen;
+          .border-to-svg__svg {
+            fill: $secondaryBlack;
+            width: 32px;
+            height: 32px;
+          }
+        }
+      }
+    }
+  }
+}

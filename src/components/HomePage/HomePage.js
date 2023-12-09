@@ -1,24 +1,27 @@
-import { PostsArticles } from "./Articles"
-import { BannerHomePage } from "./BannerHomePage"
-import { PostsAccounts } from "./NewAccounts"
+import { 
+  PostsArticles,
+  PostsAccounts,
+  BannerHomePage
+ } from './index'
 import '../../scss/components/_homePage.scss'
 import { useDispatch, useSelector } from 'react-redux'
-import { useEffect, useMemo } from "react"
-import { loadPostsAccounts, loadPostsArticles } from "../../store/action_creators"
+import { useEffect } from "react"
+import { 
+  loadLastPostsAccounts,
+  loadLastPostsArticles,
+  loadPostsAccounts
+} from "../../store/action_creators"
 
 const HomePage = () => {
 
-  const articles = useSelector(state => state.postsArticles.postsArticles)
-  const accounts = useSelector(state => state.postsAccounts.postsAccounts)
-  // const page = useSelector(state => state.currentPage.currentPage)
+  const articles = useSelector(state => state.postsArticles.postsLastArticles)
+  const accounts = useSelector(state => state.postsAccounts.postsLastAccounts)
+  // const a = useSelector(state => state.postsAccounts.postsAccounts)
   const dispatch = useDispatch()
 
-  const memoizedAccounts = useMemo(() => accounts, [accounts])
-  const memoizedArticles = useMemo(() => articles, [articles])
-
   useEffect(() => {
-    dispatch(loadPostsArticles(articles))
-    dispatch(loadPostsAccounts(accounts))
+    dispatch(loadLastPostsArticles(articles))
+    dispatch(loadLastPostsAccounts(accounts))
   }, [])
   
   return (

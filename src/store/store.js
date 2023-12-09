@@ -33,9 +33,9 @@ const store = createStore(combineReducers({
 }), applyMiddleware(sagaMiddleware))
 
 const handleChange = () => {
-  const currentValue = store.getState() 
+  const currentValue = store.getState()
   localStorage.setItem('user', `${JSON.stringify(currentValue.user)}`);
-  // localStorage.setItem('accounts', `${JSON.stringify(currentValue.accounts)}`);
+  localStorage.setItem('postsAccounts', `${JSON.stringify(currentValue.postsAccounts)}`);
 }
 
 store.subscribe(handleChange)
