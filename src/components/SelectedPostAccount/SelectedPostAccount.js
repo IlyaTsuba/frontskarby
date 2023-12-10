@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import { SelectedPostAccountImage } from './SelectedPostAccountBlockImage';
 
 const SelectedPostAccount = () => {
+  window.scrollTo(0, 0)
   const postInfo = useSelector(state => state.postsAccounts.selectedPostAccount)
   const dispatch = useDispatch();
   const {slug} = useParams()

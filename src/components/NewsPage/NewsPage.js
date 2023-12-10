@@ -6,6 +6,7 @@ import { BlockPostsTop } from "./BlockPostsTop"
 
 
 const News = () => {
+  window.scrollTo(0, 0)
   return (
     <main className='container-news'>
       

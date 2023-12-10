@@ -8,12 +8,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from "react"
 import { 
   loadLastPostsAccounts,
-  loadLastPostsArticles,
-  loadPostsAccounts
+  loadLastPostsArticles
 } from "../../store/action_creators"
 
 const HomePage = () => {
-
+  window.scrollTo(0, 0)
   const articles = useSelector(state => state.postsArticles.postsLastArticles)
   const accounts = useSelector(state => state.postsAccounts.postsLastAccounts)
   // const a = useSelector(state => state.postsAccounts.postsAccounts)

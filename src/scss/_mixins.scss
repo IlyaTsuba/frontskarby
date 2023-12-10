@@ -116,7 +116,7 @@
   justify-content: space-between;
   font-family: 'Roboto';
   font-size: 16px;
-  font-style: normal;
+  font-style: normal; 
   font-weight: 500;
   line-height: normal;
   padding: 4px 4px 4px 20px;
@@ -245,6 +245,25 @@
         .btn-more {
           @include btn-more();
           width: 40%;
+        }
+        .btn-more:hover {
+          border-color: $primaryGreen2;
+          .border-to-svg {
+            background-color: $primaryGreen2;
+          }
+        }
+        .btn-more:active {
+          color: $primaryGreen;
+          .border-to-svg {
+            background-color: $white01;
+            svg {
+              border: 0.5px solid $primaryGreen;
+              border-radius: 100px;
+              path {
+              fill: $primaryGreen;
+              } 
+            }
+          }
         }
       }
     }

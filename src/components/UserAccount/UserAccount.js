@@ -3,6 +3,7 @@ import { Mark } from "./Mark"
 import '../../scss/components/_userAccount.scss'
 
 const UserAccount = () => {
+  window.scrollTo(0, 0)
   const userInfo = useSelector(state => state.user.user)
   const postInfo = useSelector(state => state.postsAccounts.postsMarkAccounts)
   return (

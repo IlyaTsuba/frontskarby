@@ -15,18 +15,22 @@ const Header = () => {
         <ul className='navigate-list'>
           <div className='block-w-link'>
             <Link to = '/'>
-              <li className={location.pathname !== '/' ? `block-w-link__list` : `block-w-link__list hover`}>
+              <li className={location.pathname !== '/' ? `block-w-link__list` : `block-w-link__list-active`}>
                 Галоуная
               </li>
             </Link>
-            <li className='block-w-link__list'>
-              Рамяство
-            </li>
+            <Link to='/news'>
+              <li className={location.pathname !== '/news' ? `block-w-link__list` : `block-w-link__list-active`}>
+                Рамяство
+              </li>
+            </Link>
           </div>
-          <Link to = {userInfo ? `/user/acc` : `/sign-in` } >
+          <Link to = {userInfo ? `/user/account` : `/sign-in` } >
             <li className='navigate-list'>
               
-              {!userInfo ? 'Увайсці' : userInfo.username}
+              {!userInfo ? 
+                <span className='navigate-list__title'>Увайсці</span> 
+                : userInfo.username}
 
               <div className='navigate-list__icon'>
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -8,7 +8,7 @@ const Mark = ({postInfo}) => {
   return (
     <div className='block-mark'>
       <div className='block-w-info'>
-        <img className='block-w-info__img' src={postInfo.avatar}/>
+        <img className='block-w-info__img' src={'http://127.0.0.1:8000/'+ postInfo.avatar}/>
         <h2 className='block-w-info__title'>{postInfo.name}</h2>
       </div>
       <div className='block-w-btn'>

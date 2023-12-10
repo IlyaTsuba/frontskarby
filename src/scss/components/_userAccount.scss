@@ -63,13 +63,13 @@
           border-radius: 14px;
           width: 155px;
           height: 105px;
-          aspect-ratio: 3/2;
           object-fit: contain;
         }
         .block-w-info__title {
+          text-transform: uppercase;
           font-size: 32px;
           font-style: normal;
-          font-weight: 600;
+          font-weight: 500;
           line-height: 150%;
         }
       }
@@ -88,10 +88,45 @@
             border: 1px solid $primaryGreen3;
             width: 35%;
           }
+          .btn-more:hover {
+            background-color: $secondaryGreen6;
+            .border-to-svg {
+            background-color: $primaryGreen2;
+            }
+          }
+          .btn-more:active {
+            background-color: $white01;
+            .border-to-svg {
+              background-color: $primaryGreen;
+            }
+          }
         }
         .btn-delete {
           @include btn-delete();
           width: 35%;
+          background-color: $secondaryGreen5;
+        }
+        .btn-delete:hover {
+          background-color: $primaryGreen4;
+        }
+        .btn-delete:active {
+          background-color: $white01;
+        }
+      }
+    }
+    .block-mark:hover {
+      .block-w-info {
+        .block-w-info__title {
+          color: $secondaryGreen7;
+          text-decoration: underline;
+        }
+      }
+    }
+    .block-mark:active {
+      .block-w-info {
+        .block-w-info__title {
+          color: $primaryGreen2;
+          text-decoration: underline;
         }
       }
     }

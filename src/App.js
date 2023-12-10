@@ -27,7 +27,7 @@ const App = () => {
         <Route path='news' element={<News />} />
         <Route path={'accounts/:slug'} element={<SelectedPostAccount />} />
         <Route path={'articles/:slug'} element={<SelectedPostArticle />} />
-        <Route path='user/acc'>
+        <Route path='user/account'>
           <Route index element={<UserAccount />} />
         </Route>
 

@@ -18,7 +18,6 @@
   }
   .section-interesting {
     margin-top: 40px;
-    gap: 20px;
     .block-w-articles {
       display: flex;
       flex-direction: column;
@@ -40,6 +39,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      margin-top: 30px;
       .block-w-newAccounts__title {
         margin-bottom: 8px;
         font-size: 32px;
@@ -75,6 +75,25 @@
             .btn-more {
               @include btn-more();
               width: 91%;
+            }
+            .btn-more:hover {
+              border-color: $primaryGreen2;
+              .border-to-svg {
+                background-color: $primaryGreen2;
+              }
+            }
+            .btn-more:active {
+              color: $primaryGreen;
+              .border-to-svg {
+                background-color: $white01;
+                svg {
+                  border: 0.5px solid $primaryGreen;
+                  border-radius: 100px;
+                  path {
+                  fill: $primaryGreen;
+                  } 
+                }
+              }
             }
           }
         }

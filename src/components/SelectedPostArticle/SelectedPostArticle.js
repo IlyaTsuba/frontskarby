@@ -5,6 +5,7 @@ import { loadPostArticle } from "../../store/action_creators";
 
 
 const SelectedPostArticle = () => {
+  window.scrollTo(0, 0)
   const postInfo = useSelector(state => state.postsArticles.selectedPostArticle)
   console.log(postInfo)
   const dispatch = useDispatch();
