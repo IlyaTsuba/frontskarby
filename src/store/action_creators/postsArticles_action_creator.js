@@ -44,11 +44,11 @@ function* fetchLoadPostsArticles (action) {
   yield put(setPostsArticles(data))
 }
 
-// function* fetchLoadLastPostsArticles (action) {
-//   const response = yield fetch(`http://127.0.0.1:8000/last-articles`)
-//   const data = yield response.json()
-//   yield put(setLastPostsArticles(data))
-// }
+function* fetchLoadLastPostsArticles (action) {
+  const response = yield fetch(`http://127.0.0.1:8000/last-articles`)
+  const data = yield response.json()
+  yield put(setLastPostsArticles(data))
+}
 
 function* fetchLoadPostArticle (action) {
   const response = yield fetch(`http://127.0.0.1:8000/articles/${action.slug}`)
@@ -59,7 +59,7 @@ function* fetchLoadPostArticle (action) {
 function* watcherPostsArticles() {
   yield takeEvery(LOAD_POSTS_ARTICLES, fetchLoadPostsArticles)
   yield takeEvery(LOAD_POST_ARTICLE, fetchLoadPostArticle)
-  // yield takeEvery(LOAD_LAST_POSTS_ARTICLES, fetchLoadLastPostsArticles)
+  yield takeEvery(LOAD_LAST_POSTS_ARTICLES, fetchLoadLastPostsArticles)
 }
 
 export {

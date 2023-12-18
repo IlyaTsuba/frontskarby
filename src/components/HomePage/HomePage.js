@@ -19,7 +19,7 @@ const HomePage = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    // dispatch(loadLastPostsArticles(articles))
+    dispatch(loadLastPostsArticles(articles))
     dispatch(loadLastPostsAccounts(accounts))
   }, [])
   
