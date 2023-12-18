@@ -2,7 +2,7 @@ import {
   PostsArticles,
   PostsAccounts,
   BannerHomePage
- } from './index'
+} from './index'
 import '../../scss/components/_homePage.scss'
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from "react"
@@ -15,11 +15,11 @@ const HomePage = () => {
   window.scrollTo(0, 0)
   const articles = useSelector(state => state.postsArticles.postsLastArticles)
   const accounts = useSelector(state => state.postsAccounts.postsLastAccounts)
-  // const a = useSelector(state => state.postsAccounts.postsAccounts)
+
   const dispatch = useDispatch()
 
   useEffect(() => {
-    dispatch(loadLastPostsArticles(articles))
+    // dispatch(loadLastPostsArticles(articles))
     dispatch(loadLastPostsAccounts(accounts))
   }, [])
   

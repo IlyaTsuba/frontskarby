@@ -32,6 +32,7 @@
       .block-w-post-articles {
         display: flex;
         gap: 20px;
+        width: 100%;
         @include block-post();
       }
     }

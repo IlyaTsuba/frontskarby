@@ -9,14 +9,21 @@ const UserAccount = () => {
   return (
     <div className='container-userAccount'>
       <div className='block-userName'>
-        <h1 className='block-userName__name'>{userInfo.username}</h1>
+        <h1 className='block-userName__name'>{userInfo?.username}</h1>
       </div>
       <section className='block-w-userMarks'>
         <div className='block-title'>
           <h2 className='block-title__title'>Захванае</h2>
         </div>
         {postInfo.length > 0 ?
-          postInfo.map(el => <Mark postInfo={el} key={el.slug}/>)
+          postInfo.map(el => (
+            <Mark 
+              postInfo={el} 
+              key={el.slug}
+              link={el.slug}
+            />
+          )
+        )
           :
           <p>Пусто</p>
         }

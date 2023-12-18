@@ -70,6 +70,23 @@
             height: 20px;
           }
         }
+        .block-w-btn__mark_active {
+          cursor: pointer;
+          display: flex;
+          width: 44px;
+          height: 44px;
+          padding: 4px;
+          justify-content: center;
+          align-items: center;
+          border-radius: 28px;
+          border: 1px solid $primaryGreen3;
+          background: $secondaryGreen7;
+          svg {
+            fill: $black;
+            width: 20px;
+            height: 20px;
+          }
+        }
         .block-w-btn__mark:hover {
           background-color: $secondaryGreen6;
         }

@@ -1,4 +1,8 @@
-import {banner_1, banner_2, banner_3} from '../../../assets/image/var/var-img'
+import {
+  banner_1,
+  banner_2,
+  banner_3
+} from '../../../assets/image/var/var-img'
 
 const HomePageBanner = () => {
   return (
