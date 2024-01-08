@@ -22,12 +22,28 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      .block-w-articles__title {
-        margin-bottom: 8px;
-        font-size: 32px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 150%;
+      .flex-block {
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        .flex-block__title {
+          margin-bottom: 8px;
+          font-size: 32px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 150%;
+        }
+        .flex-block__link {
+          padding: 5px 10px;
+          border: .5px solid $primaryGreen3;
+          border-radius: 20px;
+        }
+        .flex-block__link:hover {
+          background-color: $primaryGreen4;
+        }
+        .flex-block__link:active {
+          background-color: $primaryGreen;
+        }
       }
       .block-w-post-articles {
         display: flex;
@@ -41,12 +57,28 @@
       flex-direction: column;
       align-items: flex-start;
       margin-top: 30px;
-      .block-w-newAccounts__title {
-        margin-bottom: 8px;
-        font-size: 32px;
-        font-style: normal;
-        font-weight: 600;
-        line-height: 150%;
+      .flex-block {
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        .flex-block__title {
+          margin-bottom: 8px;
+          font-size: 32px;
+          font-style: normal;
+          font-weight: 600;
+          line-height: 150%;
+        }
+        .flex-block__link {
+          padding: 5px 10px;
+          border: .5px solid $primaryGreen3;
+          border-radius: 20px;
+        }
+        .flex-block__link:hover {
+          background-color: $primaryGreen4;
+        }
+        .flex-block__link:active {
+          background-color: $primaryGreen;
+        }
       }
       .block-w-post-accounts {
         display: flex;
@@ -63,12 +95,13 @@
           border: 0.5px solid $primaryGreen2;
           background: $white01;
           .block-account__image {
+            border: .9px solid $secondaryGreen6;
             width: 95%;
             height: 210px;
             border-radius: 22px;
-            aspect-ratio: 3/2;
-            object-fit: contain;
-            // mix-blend-mode: color-burn;
+            aspect-ratio: 2;
+            object-fit:cover;
+            // mix-blend-mode:darken;
           }
           a {
             width: 100%;

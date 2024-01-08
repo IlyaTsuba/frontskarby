@@ -48,8 +48,9 @@
           color: $white01;
         }
       }
-      .navigate-list {
+      .block-w-userInfo {
         display: flex;
+        align-items: center;
         gap: 16px;
         color: $secondaryGreen7;
         font-size: 16px;
@@ -57,10 +58,10 @@
         font-weight: 500;
         line-height: 150%;
         cursor: pointer;
-        .navigate-list__title {
+        .block-w-userInfo__title {
           color: $secondaryGreen7;
         }
-        .navigate-list__icon {
+        .block-w-userInfo__icon {
           border: 1px solid $black;
           display: flex;
           width: 40px;
@@ -73,20 +74,20 @@
           border-radius: 100%;
         }
       }
-      .navigate-list:hover {
-        .navigate-list__title {
+      .block-w-userInfo:hover {
+        .block-w-userInfo__title {
           text-decoration-line: underline;
         }
-        .navigate-list__icon {
+        .block-w-userInfo__icon {
           border: none;
           background-color: $primaryGreen4;
         }
       }
-      .navigate-list:active {
-        .navigate-list__title {
+      .block-w-userInfo:active {
+        .block-w-userInfo__title {
           text-decoration-line: none;
         }
-        .navigate-list__icon {
+        .block-w-userInfo__icon {
           background-color: $primaryGreen;
           svg {
             path {
@@ -95,6 +96,37 @@
           }
         }
       }
+      .nav {
+        position: absolute;
+        top: 84px;
+        right: 110px;
+        background: $white01;
+        height: 100px;
+        width: 110px;
+        border-bottom-right-radius: 18px;
+        border-bottom-left-radius: 18px;
+        box-shadow: 2px 2px 2px 0px $primaryGreen;
+        .nav_list {
+          padding-right: 10px;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-end;
+          gap: 20px;
+          .nav_list__item {
+            cursor: pointer;
+          }
+          .nav_list__item:hover {
+            text-decoration-line: underline;
+          }
+        }
       }
     }
   }
+}
+
+.active {
+  border-bottom-right-radius: 0px;
+}

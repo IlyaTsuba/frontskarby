@@ -3,14 +3,16 @@ import {
   REMOVE_POST_ACCOUNT,
   SET_LAST_POSTS_ACCOUNTS,
   SET_POSTS_ACCOUNTS,
-  SET_SELECTED_POST_ACCOUNT 
+  SET_SELECTED_POST_ACCOUNT, 
+  SET_SELECTED_POST_ACCOUNT_WIDGET
 } from "../action_types";
 
 const initialState = {
   postsAccounts: [],
   postsLastAccounts: [],
   postsMarkAccounts: [],
-  selectedPostAccount: null
+  selectedPostAccount: null,
+  selectedPostWidget: null,
 }
 
 const cacheState = () => {
@@ -52,6 +54,12 @@ const postsAccounts = (state = cacheState(), action) => {
       return ({
         ...state,
         postsMarkAccounts: state.postsMarkAccounts.filter(el => el.slug !== action.slug)
+      })
+    }
+    case SET_SELECTED_POST_ACCOUNT_WIDGET: {
+      return ({
+        ...state,
+        selectedPostWidget: action.postAccount
       })
     }
     default : {

@@ -12,35 +12,41 @@ import {
   News,
   UserAccount,
   SelectedPostAccount,
-  SelectedPostArticle
+  SelectedPostArticle,
+  Loader,
+  AccountSettings,
+  Accounts
 } from './components';
 
 const App = () => {
   return (
     <>
-    <Header />
-    <Routes>
-      
-      <Route path='/'>
+      <Header />
+      <Routes>
         
-        <Route index element={<HomePage />} />
-        <Route path='news' element={<News />} />
-        <Route path={'accounts/:slug'} element={<SelectedPostAccount />} />
-        <Route path={'articles/:slug'} element={<SelectedPostArticle />} />
-        <Route path='user/account'>
-          <Route index element={<UserAccount />} />
+        <Route path='/'>
+          
+          <Route index element={<HomePage />} />
+          <Route path='news' element={<News />} />
+          <Route path='accounts' element={<Accounts />} />
+          <Route path={'accounts/:slug'} element={<SelectedPostAccount />} />
+          <Route path={'articles/:slug'} element={<SelectedPostArticle />} />
+          
+          <Route path={'user/account'} element={<UserAccount />} />
+          <Route path={'user/settings'} element={<AccountSettings />} />
+
+          <Route path={'loading'} element={<Loader />} />
+
+          <Route path='sign-up' element={<SignUp />} />
+          <Route path='sign-in' element={<SignIn />} />
+          <Route path='registration' element={<RegistrationConfirmation />} />
+          <Route path='confirmed' element={<Confirmed />} />
+          <Route path={'activate/:uid/:token'} element={<RegistrationActivation />} />
+
         </Route>
-
-        <Route path='sign-up' element={<SignUp />} />
-        <Route path='sign-in' element={<SignIn />} />
-        <Route path='registration' element={<RegistrationConfirmation />} />
-        <Route path='confirmed' element={<Confirmed />} />
-        <Route path={'activate/:uid/:token'} element={<RegistrationActivation />} />
-
-      </Route>
-    
-    </Routes>
-    <Footer />
+      
+      </Routes>
+      <Footer />
     </>
   );
 };

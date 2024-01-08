@@ -3,7 +3,9 @@ import {
   REGISTRATION, 
   SIGN_IN, 
   GET_USER_DATA, 
-  SET_USER 
+  SET_USER, 
+  SET_EMAIL,
+  SET_PASSWORD
 } from '../action_types'
 import { takeEvery, put } from 'redux-saga/effects'
 import { getToken } from '../../utils'
@@ -30,6 +32,16 @@ const userData = () => ({
 
 const setUser = (userInfo) => ({
   type: SET_USER,
+  userInfo
+})
+
+const setEmail = (userInfo) => ({
+  type: SET_EMAIL,
+  userInfo
+})
+
+const setPassword = (userInfo) => ({
+  type: SET_PASSWORD,
   userInfo
 })
 
@@ -61,7 +73,7 @@ function* fetchRegistration(action) {
   }
 }
 
-function* fetchUserDataBase() {
+function* fetchUserDataBase(action) {
   const token = yield getToken();
   const response = yield fetch('http://127.0.0.1:8000/users/auth/users/me/', {
     headers: { 
@@ -70,7 +82,9 @@ function* fetchUserDataBase() {
   });
   const data = yield response.json();
   yield put(setUser(data))
-  window.location.pathname = '/'
+  if(!action) {
+    window.location.pathname = '/'
+  }
 }
 
 function* fetchSignIn(action) {
@@ -89,11 +103,45 @@ function* fetchSignIn(action) {
   }
 }
 
+function* fetchSetEmail(action) {
+    const token = yield getToken();
+    const response = yield fetch('http://127.0.0.1:8000/users/auth/users/set_email/', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+      body: JSON.stringify(action.userInfo)
+    })
+    if(response.status === 204) {
+      yield fetchUserDataBase(true)
+  }
+}
+
+function* fetchSetPassword(action) {
+  console.log(action)
+  const token = yield getToken();
+  const response = yield fetch('http://127.0.0.1:8000/users/auth/users/set_password/', {
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/json',
+      'Authorization': `Bearer ${token}`,
+    },
+    body: JSON.stringify(action.userInfo)
+  })
+  if(response.status === 204) {
+    const userInfo = localStorage.getItem('user')
+    console.log(userInfo)
+  }
+}
+
 function* watcherUser() {
   yield takeEvery(ACTIVATION_REGISTRATION, fetchActivationRegistration)
   yield takeEvery(REGISTRATION, fetchRegistration)
   yield takeEvery(SIGN_IN, fetchSignIn)
   yield takeEvery(GET_USER_DATA, fetchUserDataBase)
+  yield takeEvery(SET_EMAIL, fetchSetEmail)
+  yield takeEvery(SET_PASSWORD, fetchSetPassword)
 }
 
 export { 
@@ -101,5 +149,7 @@ export {
   registration, 
   watcherUser,
   signIn,
-  setUser
+  setUser,
+  setEmail,
+  setPassword,
 }

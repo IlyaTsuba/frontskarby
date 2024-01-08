@@ -1,13 +1,16 @@
 
 function* getToken() {
   const accessToken = localStorage.getItem('access');
-  const refreshToken = localStorage.getItem('refresh')
+  const refreshToken = localStorage.getItem('refresh');
+  
   const tokenLocal = {
     token: accessToken
   }
+
   const tokenRefresh = {
     refresh: refreshToken
   }
+
   const response = yield fetch('http://127.0.0.1:8000/users/auth/jwt/verify/', {
     method: 'POST',
     headers: {

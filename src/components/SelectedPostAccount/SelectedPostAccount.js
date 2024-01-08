@@ -5,27 +5,35 @@ import { loadPostAccount, setPostAccount } from '../../store/action_creators';
 import { useEffect } from 'react';
 import { SelectedPostAccountImage } from './SelectedPostAccountBlockImage';
 import { removePostAccount } from '../../store/action_creators';
+import { Loader } from '../Loader';
 
 const SelectedPostAccount = () => {
+  const {slug} = useParams()
   
   const postInfo = useSelector(state => state.postsAccounts.selectedPostAccount)
+  const post = useSelector(() => postInfo && Object
+    .values(postInfo)
+    .find(el => el === slug))
   const statePostMark = useSelector(state => state.postsAccounts.postsMarkAccounts)
   const dispatch = useDispatch();
-  const {slug} = useParams()
-  console.log(statePostMark)
+
   useEffect(() => {
     window.scrollTo(0, 0)
-    dispatch(loadPostAccount(slug))
-  }, [slug])
+    const fetchDataAsync = async () => {
+      await dispatch(loadPostAccount(slug));
+    }
+    fetchDataAsync()
+  }, [dispatch ,slug])
     
   return (
-    <main className='container-choseAccount'>
+    <>
+    {post ? <main className='container-choseAccount'>
       <div className='block-w-title'>
         <h1 className='block-w-title__title'>{postInfo?.name}</h1>
       </div>
       <div className='block-account'>
         <div className='block-w-info-account'>
-          <h4 className='block-w-info-account__title'>{postInfo?.description}</h4>
+          <h5 className='block-w-info-account__description'>{postInfo?.description}</h5>
           <div className='block-w-btn'>
             <div 
               className={statePostMark.find(el => el.slug === slug) ? 'block-w-btn__mark_active' : 'block-w-btn__mark'}
@@ -61,7 +69,11 @@ const SelectedPostAccount = () => {
           <SelectedPostAccountImage photo={el} key={i} alt='photo'/>
         )}
       </article>
-    </main>
+    </main> :
+    
+    <Loader/>
+    }
+    </>
   )
 }
 

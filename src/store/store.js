@@ -1,45 +1,47 @@
-import { 
-  combineReducers, 
-  createStore, 
-  applyMiddleware
-} from "redux";
-import { all } from 'redux-saga/effects';
-import { 
-  watcherPostsAccounts, 
-  watcherUser,
-  watcherPostsArticles
-} from "./action_creators";
-import createSagaMiddleware from 'redux-saga';
-import { 
-  postsAccounts, 
-  user, 
-  postsArticles
-} from "./reducers";
+  import { 
+    combineReducers, 
+    createStore, 
+    applyMiddleware
+  } from "redux";
+  import { all } from 'redux-saga/effects';
+  import { 
+    watcherPostsAccounts, 
+    watcherUser,
+    watcherPostsArticles,
+  } from "./action_creators";
+  import createSagaMiddleware from 'redux-saga';
+  import { 
+    postsAccounts, 
+    user, 
+    postsArticles
+  } from "./reducers";
+  import { composeWithDevTools } from 'redux-devtools-extension';
 
 
-const sagaMiddleware = createSagaMiddleware();
-function* rootSaga(){
-  yield all([
-    watcherPostsArticles(),
-    watcherPostsAccounts(),
-    watcherUser()
-  ])
-}
+  const sagaMiddleware = createSagaMiddleware();
+  function* rootSaga(){
+    yield all([
+      watcherPostsArticles(),
+      watcherPostsAccounts(),
+      watcherUser(),
+    ])
+  }
 
-const store = createStore(combineReducers({
-  user: user,
-  postsAccounts: postsAccounts,
-  postsArticles: postsArticles,
-}), applyMiddleware(sagaMiddleware))
+  const store = createStore(combineReducers({
+    user: user,
+    postsAccounts: postsAccounts,
+    postsArticles: postsArticles,
+  }), composeWithDevTools(applyMiddleware(sagaMiddleware)))
 
-const handleChange = () => {
-  const currentValue = store.getState()
-  localStorage.setItem('user', `${JSON.stringify(currentValue.user)}`);
-  localStorage.setItem('postsAccounts', `${JSON.stringify(currentValue.postsAccounts)}`);
-}
+  const handleChange = () => {
+    const currentValue = store.getState()
+    localStorage.setItem('user', `${JSON.stringify(currentValue.user)}`);
+    localStorage.setItem('postsAccounts', `${JSON.stringify(currentValue.postsAccounts)}`);
+    
+  }
 
-store.subscribe(handleChange)
+  store.subscribe(handleChange)
 
-sagaMiddleware.run(rootSaga);
+  sagaMiddleware.run(rootSaga);
 
-export { store }
+  export { store }

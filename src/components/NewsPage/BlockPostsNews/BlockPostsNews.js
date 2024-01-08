@@ -20,7 +20,7 @@ const BlockPostsNews = () => {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(loadPostsArticles(postsNews))
-  }, [])
+  }, [postsNews])
   return (
     <section className='section-news'>
       {splitPosts(postsNews).map(el => 

@@ -1,7 +1,7 @@
 import { SET_USER } from "../action_types";
 
 const initialState = {
-  user: null
+  user: null,
 }
 
 const cacheState = () => {

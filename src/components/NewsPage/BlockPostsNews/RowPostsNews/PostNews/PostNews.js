@@ -2,7 +2,7 @@ import { ButtonMore } from "../../../../Buttons"
 
 const PostNews = ({post}) => {
 
-  const {photo, slug, title, content} = post
+  const {slug, title, content} = post
   return (
     <div className='container-post'>
       <div className='block-w-info-a-img'>
@@ -14,7 +14,6 @@ const PostNews = ({post}) => {
             {content}
           </p>
         </div>
-        {photo.length >= 1 ? <img className='img' src={photo && photo[0]?.photo} alt='img'/> : '' }
       </div>
 
       <div className='flex-block-w-btn'>
