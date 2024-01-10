@@ -1,6 +1,7 @@
 @import "../variables";
 
 .container-header {
+  position: relative;
   margin: 0 auto;
   display: flex;
   max-width: 1300px;
@@ -49,6 +50,7 @@
         }
       }
       .block-w-userInfo {
+        position: relative;
         display: flex;
         align-items: center;
         gap: 16px;
@@ -98,8 +100,8 @@
       }
       .nav {
         position: absolute;
-        top: 84px;
-        right: 110px;
+        top: 99%;
+        right: 0;
         background: $white01;
         height: 100px;
         width: 110px;

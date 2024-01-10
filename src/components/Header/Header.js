@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../../scss/components/_header.scss'
 import { Link, useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -10,7 +10,26 @@ const Header = () => {
   const dispatch = useDispatch();
   const [ state, setState ] = useState(false);
 
-  const handler = () => setState(state ? false : true);
+  const handleClickOutside = (event) => {
+    const navElement = document.querySelector('.nav');
+    if (navElement && !navElement.contains(event.target)) {
+      setState(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
+  const handler = () => setState((prevState) => !prevState);
+
+  const handleUserInfoClick = (event) => {
+    event.stopPropagation();
+    handler();
+  };
   return (
     <header className={!state ? `container-header` : `container-header active`}>
       <Link to = '/'>
@@ -33,7 +52,7 @@ const Header = () => {
           {
           !userInfo 
           ? (<Link to={`/sign-in`}>
-              <li className='block-w-userInfo'>
+              <li className='block-w-userInfo' onClick={handleUserInfoClick}>
                 <span className='block-w-userInfo__title'>Увайсці</span>
                 <div className='block-w-userInfo__icon'>
                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,7 +64,8 @@ const Header = () => {
             <>
               <li 
                 className='block-w-userInfo'
-                onClick={handler}
+                onClick={handleUserInfoClick}
+                
               >
                 <span className='block-w-userInfo__title'>{userInfo.username}</span>
                 <div className='block-w-userInfo__icon'>
