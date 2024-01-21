@@ -12,6 +12,7 @@
     align-items: center;
     border-radius: 28px;
     background-color: $white01;
+    border: 1px solid $primaryGreen4;
     .block-w-title__title {
       text-transform: uppercase;
       font-size: 40px;
@@ -28,12 +29,15 @@
     align-items: center;
     background-color: $white01;
     border-radius: 28px;
+    border: 1px solid $primaryGreen4;
     .block-w-info-account {
       display: flex;
       flex-direction: column;
       gap: 8px;
       width: 40%;
       .block-w-info-account__description {
+        width: 100%;
+        height: 50%;
         font-size: 20px;
         font-style: normal;
         font-weight: 500;
@@ -53,40 +57,6 @@
         align-items: center;
         justify-content: flex-start;
         gap: 26px;
-        .block-w-btn__mark {
-          cursor: pointer;
-          display: flex;
-          width: 44px;
-          height: 44px;
-          padding: 4px;
-          justify-content: center;
-          align-items: center;
-          border-radius: 28px;
-          border: 1px solid $primaryGreen3;
-          background: $secondaryGreen8;
-          svg {
-            fill: $primaryGreen2;
-            width: 20px;
-            height: 20px;
-          }
-        }
-        .block-w-btn__mark_active {
-          cursor: pointer;
-          display: flex;
-          width: 44px;
-          height: 44px;
-          padding: 4px;
-          justify-content: center;
-          align-items: center;
-          border-radius: 28px;
-          border: 1px solid $primaryGreen3;
-          background: $secondaryGreen7;
-          svg {
-            fill: $black;
-            width: 20px;
-            height: 20px;
-          }
-        }
         .block-w-btn__mark:hover {
           background-color: $secondaryGreen6;
         }
@@ -126,8 +96,9 @@
     }
     .block-w-avatar {
       .block-w-avatar__avatar {
+        width: 220px;
         height: 220px;
-        object-fit: contain;
+        object-fit:cover;
         border-radius: 23px;
       }
     }
@@ -147,6 +118,7 @@
       height: 490px;
       border-radius: 28px;
       background-color: $white01;
+      border: 1px solid $primaryGreen4;
       img {
         width: 388px;
         height: 458px;

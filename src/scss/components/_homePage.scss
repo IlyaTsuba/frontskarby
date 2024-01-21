@@ -11,6 +11,7 @@
     gap: 49px;
     padding: 20px 20px 15px 36px;
     border-radius: 28px;
+    border: 1px solid $primaryGreen4;
     @include banner();
     .block-w-img {
       @include image();
@@ -103,35 +104,78 @@
             object-fit:cover;
             // mix-blend-mode:darken;
           }
-          a {
-            width: 100%;
-            display: contents;
-            .btn-more {
-              @include btn-more();
-              width: 91%;
-            }
-            .btn-more:hover {
-              border-color: $primaryGreen2;
-              .border-to-svg {
-                background-color: $primaryGreen2;
+          // .block-w-actions {
+          //   width: 100%;
+          //   display: flex;
+          //   justify-content: space-between;
+          //   align-items: center;
+            a {
+              width: 90%;
+              display: contents;
+              .btn-more {
+                @include btn-more();
+                width: 90%;
+              }
+              .btn-more:hover {
+                border-color: $primaryGreen2;
+                .border-to-svg {
+                  background-color: $primaryGreen2;
+                }
+              }
+              .btn-more:active {
+                color: $primaryGreen;
+                .border-to-svg {
+                  background-color: $white01;
+                  svg {
+                    border: 0.5px solid $primaryGreen;
+                    border-radius: 100px;
+                    path {
+                    fill: $primaryGreen;
+                    } 
+                  }
+                }
               }
             }
-            .btn-more:active {
-              color: $primaryGreen;
-              .border-to-svg {
-                background-color: $white01;
+            .flex-box {
+              display: inline-flex;
+              gap: 16px;
+              width: 90%;
+              .block-w-btn__mark {
+                cursor: pointer;
+                display: flex;
+                width: 55px;
+                padding: 4px;
+                justify-content: center;
+                align-items: center;
+                border-radius: 100%;
+                border: 1px solid $primaryGreen3;
+                background: $secondaryGreen8;
                 svg {
-                  border: 0.5px solid $primaryGreen;
-                  border-radius: 100px;
-                  path {
-                  fill: $primaryGreen;
-                  } 
+                  fill: $primaryGreen2;
+                  width: 20px;
+                  height: 20px;
+                }
+              }
+              .block-w-btn__mark_active {
+                cursor: pointer;
+                display: flex;
+                width: 55px;
+                padding: 4px;
+                justify-content: center;
+                align-items: center;
+                border-radius: 100%;
+                border: 1px solid $primaryGreen3;
+                background: $secondaryGreen7;
+                svg {
+                  fill: $black;
+                  width: 20px;
+                  height: 20px;
                 }
               }
             }
           }
         }
-      }
+      // }
     }
   }
 }

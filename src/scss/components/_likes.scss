@@ -1,0 +1,14 @@
+@import '../variables';
+
+.block-w-likes {
+  display: inline-flex;
+  gap: 16px;
+  align-items: center;
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+  .active {
+    fill: $red;
+  }
+}

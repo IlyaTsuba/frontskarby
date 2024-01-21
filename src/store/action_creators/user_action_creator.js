@@ -5,10 +5,13 @@ import {
   GET_USER_DATA, 
   SET_USER, 
   SET_EMAIL,
-  SET_PASSWORD
+  SET_PASSWORD,
+  SET_LIKE_POST_ACCOUNT,
+  SET_DISLIKE_POST_ACCOUNT
 } from '../action_types'
 import { takeEvery, put } from 'redux-saga/effects'
 import { getToken } from '../../utils'
+import { loadPostAccount } from './postsAccounts_action_creator'
 
 
 const activateRegistration = (activationInfo) => ({
@@ -43,6 +46,16 @@ const setEmail = (userInfo) => ({
 const setPassword = (userInfo) => ({
   type: SET_PASSWORD,
   userInfo
+})
+
+const setPostAccountLike = (slug) => ({
+  type: SET_LIKE_POST_ACCOUNT,
+  slug
+})
+
+const removePostAccountLike = (slug) => ({
+  type: SET_DISLIKE_POST_ACCOUNT,
+  slug
 })
 
 function* fetchActivationRegistration(action) {
@@ -100,6 +113,7 @@ function* fetchSignIn(action) {
     localStorage.setItem('access', `${data.access}`);
     localStorage.setItem('refresh', `${data.refresh}`);
     yield put(userData())
+    window.location.pathname = '/'
   }
 }
 
@@ -119,7 +133,6 @@ function* fetchSetEmail(action) {
 }
 
 function* fetchSetPassword(action) {
-  console.log(action)
   const token = yield getToken();
   const response = yield fetch('http://127.0.0.1:8000/users/auth/users/set_password/', {
     method: 'POST',
@@ -131,8 +144,30 @@ function* fetchSetPassword(action) {
   })
   if(response.status === 204) {
     const userInfo = localStorage.getItem('user')
-    console.log(userInfo)
   }
+}
+
+function* fetchLoadPostAccountLike (action) {
+  console.log()
+  const token = yield getToken();
+  const response = yield fetch(`http://127.0.0.1:8000/accounts/${action.slug}/like/`, {
+    method: 'POST',
+    headers: { 
+      'Authorization': `Bearer ${token}`,
+    }
+  })
+  if (response.status === 201) yield put(loadPostAccount(action.slug))
+}
+
+function* fetchLoadPostAccountDislike (action) {
+  const token = yield getToken();
+  const response = yield fetch(`http://127.0.0.1:8000/accounts/${action.slug}/like/`, {
+    method: 'DELETE',
+    headers: { 
+      'Authorization': `Bearer ${token}`,
+    }
+  })
+  if (response.status === 200) yield put(loadPostAccount(action.slug))
 }
 
 function* watcherUser() {
@@ -142,6 +177,8 @@ function* watcherUser() {
   yield takeEvery(GET_USER_DATA, fetchUserDataBase)
   yield takeEvery(SET_EMAIL, fetchSetEmail)
   yield takeEvery(SET_PASSWORD, fetchSetPassword)
+  yield takeEvery(SET_LIKE_POST_ACCOUNT, fetchLoadPostAccountLike)
+  yield takeEvery(SET_DISLIKE_POST_ACCOUNT, fetchLoadPostAccountDislike)
 }
 
 export { 
@@ -152,4 +189,6 @@ export {
   setUser,
   setEmail,
   setPassword,
+  setPostAccountLike,
+  removePostAccountLike
 }

@@ -11,6 +11,7 @@ import {
   SET_SELECTED_POST_ACCOUNT,
   SET_SELECTED_POST_ACCOUNT_WIDGET
 } from '../action_types'
+import { getToken } from '../../utils'
 
 const loadPostsAccounts = () => ({
   type: LOAD_POSTS_ACCOUNTS
@@ -36,9 +37,10 @@ const setSelectedPostAccount = (postAccount) => ({
   postAccount
 })
 
-const loadPostAccount = (slug) => ({
+const loadPostAccount = (slug, userInfo) => ({
   type: LOAD_POST_ACCOUNT,
-  slug
+  slug,
+  userInfo
 })
 
 const setPostAccount = (postAccount) => ({
@@ -46,9 +48,10 @@ const setPostAccount = (postAccount) => ({
   postAccount
 })
 
-const removePostAccount = (slug) => ({
+const removePostAccount = (slug, userInfo) => ({
   type: REMOVE_POST_ACCOUNT,
-  slug
+  slug,
+  userInfo
 })
 
 const loadSelectedPostAccountWidget = (slug) => ({
@@ -74,15 +77,37 @@ function* fetchLoadLastPostsAccounts (action) {
 }
 
 function* fetchLoadPostAccount (action) {
-  const response = yield fetch(`http://127.0.0.1:8000/accounts/${action.slug}`)
-  const data = yield response.json()
-  yield put(setSelectedPostAccount(data))
+  if (action.userInfo === null) {
+    const response = yield fetch(`http://127.0.0.1:8000/accounts/${action.slug}`)
+    const data = yield response.json()
+    yield put(setSelectedPostAccount(data))
+  } else {
+    const token = yield getToken();
+    const response = yield fetch(`http://127.0.0.1:8000/accounts/${action.slug}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+      }
+    })
+    const data = yield response.json()
+    yield put(setSelectedPostAccount(data))
+  }
 }
 
 function* fetchLoadSelectedPostAccountWidget (action) {
-  const response = yield fetch(`http://127.0.0.1:8000/accounts/${action.slug}`)
-  const data = yield response.json()
-  yield put(setSelectedPostAccountWidget(data))
+  if (action.userInfo === null) {
+    const response = yield fetch(`http://127.0.0.1:8000/accounts/${action.slug}`)
+    const data = yield response.json()
+    yield put(setSelectedPostAccount(data))
+  } else {
+    const token = yield getToken();
+    const response = yield fetch(`http://127.0.0.1:8000/accounts/${action.slug}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+      }
+    })
+    const data = yield response.json()
+    yield put(setSelectedPostAccount(data))
+  }
 }
 
 function* watcherPostsAccounts() {
@@ -99,5 +124,5 @@ export {
   loadLastPostsAccounts,
   setPostAccount,
   removePostAccount,
-  loadSelectedPostAccountWidget
+  loadSelectedPostAccountWidget,
 }

@@ -13,7 +13,8 @@
   import { 
     postsAccounts, 
     user, 
-    postsArticles
+    postsArticles,
+    ui
   } from "./reducers";
   import { composeWithDevTools } from 'redux-devtools-extension';
 
@@ -28,16 +29,17 @@
   }
 
   const store = createStore(combineReducers({
-    user: user,
-    postsAccounts: postsAccounts,
-    postsArticles: postsArticles,
+    user,
+    postsAccounts,
+    postsArticles,
+    ui
   }), composeWithDevTools(applyMiddleware(sagaMiddleware)))
 
   const handleChange = () => {
     const currentValue = store.getState()
     localStorage.setItem('user', `${JSON.stringify(currentValue.user)}`);
     localStorage.setItem('postsAccounts', `${JSON.stringify(currentValue.postsAccounts)}`);
-    
+    localStorage.setItem('ui', `${JSON.stringify(currentValue.ui)}`);
   }
 
   store.subscribe(handleChange)
