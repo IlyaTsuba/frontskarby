@@ -95,9 +95,7 @@ function* fetchUserDataBase(action) {
   });
   const data = yield response.json();
   yield put(setUser(data))
-  if(!action) {
-    window.location.pathname = '/'
-  }
+  if (typeof(action) === 'object' ) window.location.pathname = '/'
 }
 
 function* fetchSignIn(action) {
@@ -113,7 +111,6 @@ function* fetchSignIn(action) {
     localStorage.setItem('access', `${data.access}`);
     localStorage.setItem('refresh', `${data.refresh}`);
     yield put(userData())
-    window.location.pathname = '/'
   }
 }
 

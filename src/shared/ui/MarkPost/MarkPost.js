@@ -4,16 +4,19 @@ import { removePostAccount, setPostAccount } from '../../../store/action_creator
 const MarkPost = ({postInfo}) => {
   const { slug } = postInfo
   const statePostMark = useSelector(state => state.postsAccounts.postsMarkAccounts)
+  const userInfo = useSelector(state => state.user.user)
   const dispatch = useDispatch();
 
   return (
     <div 
-      className={statePostMark.find(el => el.slug === slug) ? 'block-w-btn__mark_active' : 'block-w-btn__mark'}
+      className={statePostMark.find(el => el.slug === slug)  && userInfo !== null ? 'block-w-btn__mark_active' : 'block-w-btn__mark'}
       onClick={() => {
-        if (statePostMark.find(el => el.slug === slug)) {
+        if (statePostMark.find(el => el.slug === slug) && userInfo !== null) {
           return dispatch(removePostAccount(slug))
-        } else {
+        } else if (userInfo !== null) {
           return dispatch(setPostAccount(postInfo))
+        } else {
+          window.location.pathname = '/sign-in'
         }
       }}
     >

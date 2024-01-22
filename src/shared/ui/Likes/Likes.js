@@ -1,19 +1,20 @@
 import { useState } from 'react'
 import '../../../scss/components/_likes.scss'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { removePostAccountLike, setPostAccountLike } from '../../../store/action_creators'
 
 const Likes = ({postInfo}) => {
   const { slug, is_liked, likes_count } = postInfo;
+  const userInfo = useSelector(state => state.user.user)
   const dispatch = useDispatch()
-  const [ Liked, setLaked ] = useState(is_liked);
-
+  const [ liked, setLiked ] = useState(is_liked);
+  
   const handleClickLike = (slug) => {
-    if (!Liked) {
-      setLaked(!Liked)
+    if (!liked && userInfo !== null) {
+      setLiked((prevLiked) => !prevLiked)
       dispatch(setPostAccountLike(slug))
-    } else {
-      setLaked(!Liked)
+    } else if ( liked && userInfo !== null) {
+      setLiked((prevLiked) => !prevLiked)
       dispatch(removePostAccountLike(slug))
     }
   }
@@ -21,7 +22,7 @@ const Likes = ({postInfo}) => {
   return (
     <div className='block-w-likes'>
       <svg 
-        className={`icon ${Liked ? 'active' : ''}`}
+        className={`icon ${is_liked && userInfo !== null ? 'active' : ''}`}
         onClick={() => handleClickLike(slug)}
         xmlns="http://www.w3.org/2000/svg" 
         viewBox="0 0 512 512"
