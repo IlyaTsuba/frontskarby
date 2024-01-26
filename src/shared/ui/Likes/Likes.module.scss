@@ -1,0 +1,22 @@
+@import '../../../scss/mixins';
+@import '../../../scss/variables';
+
+.block_w_likes {
+  cursor: pointer;
+  @include Flex-box();
+  width: 50px;
+  gap: 16px;
+  .like {
+    fill: $red;
+  }
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+  .active {
+    fill: $red;
+  }
+  .counter {
+    
+  }
+}

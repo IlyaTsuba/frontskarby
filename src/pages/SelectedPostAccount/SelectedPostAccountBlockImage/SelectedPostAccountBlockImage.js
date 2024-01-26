@@ -1,9 +1,9 @@
 
 
-const SelectedPostAccountImage = ({photo}) => {
+const SelectedPostAccountImage = ({photo, cls}) => {
 
   return (
-    <div className='box-w-photo'>
+    <div className={cls.box_photo}>
       <img src={photo.photo} alt='photo'/>
     </div>
   )

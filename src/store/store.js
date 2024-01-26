@@ -39,7 +39,7 @@
     const currentValue = store.getState()
     localStorage.setItem('user', `${JSON.stringify(currentValue.user)}`);
     localStorage.setItem('postsAccounts', `${JSON.stringify(currentValue.postsAccounts)}`);
-    localStorage.setItem('ui', `${JSON.stringify(currentValue.ui)}`);
+    // localStorage.setItem('ui', `${JSON.stringify(currentValue.ui)}`);
   }
 
   store.subscribe(handleChange)

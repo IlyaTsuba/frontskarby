@@ -18,12 +18,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   color: $black;
+  
+  
 
+
+  background: linear-gradient(90deg, rgb(233, 231, 222) 0%, rgb(232, 227, 219) 50%, rgb(221, 231, 225) 100%);
 }
 
 #root {
   padding-top: 20px;
-  background-color: $blackBackground;
+  width: 1300px;
+  margin: 0 auto;
 }
 
 input {

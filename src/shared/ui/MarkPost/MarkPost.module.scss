@@ -1,0 +1,36 @@
+@import '../../../scss/mixins';
+@import '../../../scss/variables';
+
+.mark {
+  flex: 1;
+  cursor: pointer;
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border: 1px solid $primaryGreen3;
+  background: $secondaryGreen8;
+  svg {
+    fill: $primaryGreen2;
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.mark_active {
+  flex: 1;
+  cursor: pointer;
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  border: 1px solid $primaryGreen3;
+  background: $secondaryGreen7;
+  svg {
+    fill: $black;
+    width: 20px;
+    height: 20px;
+  }
+}

@@ -32,27 +32,27 @@ const Header = () => {
   };
   return (
     <header className={!state ? `container-header` : `container-header active`}>
-      <Link to = '/'>
+      <a href = '/'>
         <h1 className='container-header__title'>Skarby</h1>
-      </Link>
+      </a>
       <nav className='navigate'>
         <ul className='navigate-list'>
           <div className='block-w-link'>
-            <Link to = '/'>
+            <a href = '/'>
               <li className={location.pathname !== '/' ? `block-w-link__list` : `block-w-link__list-active`}>
                 Галоуная
               </li>
-            </Link>
-            <Link to='/accounts'>
+            </a>
+            <a href='/accounts'>
               <li className={location.pathname !== '/accounts' ? `block-w-link__list` : `block-w-link__list-active`}>
                 Рамяство
               </li>
-            </Link>
-            <Link to='/news'>
+            </a>
+            {/* <a href='/news'>
               <li className={location.pathname !== '/news' ? `block-w-link__list` : `block-w-link__list-active`}>
                 Навины
               </li>
-            </Link>
+            </a> */}
           </div>
           {
           !userInfo 

@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { removePostAccount, setPostAccount } from '../../../store/action_creators'
+import cls from './MarkPost.module.scss'
 
 const MarkPost = ({postInfo}) => {
   const { slug } = postInfo
@@ -9,7 +10,7 @@ const MarkPost = ({postInfo}) => {
 
   return (
     <div 
-      className={statePostMark.find(el => el.slug === slug)  && userInfo !== null ? 'block-w-btn__mark_active' : 'block-w-btn__mark'}
+      className={statePostMark.find(el => el.slug === slug)  && userInfo !== null ? cls.mark_active : cls.mark}
       onClick={() => {
         if (statePostMark.find(el => el.slug === slug) && userInfo !== null) {
           return dispatch(removePostAccount(slug))

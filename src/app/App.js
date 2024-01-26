@@ -28,7 +28,7 @@ const App = () => {
         <Route path='/'>
           
           <Route index element={<HomePage />} />
-          <Route path='news' element={<News />} />
+          {/* <Route path='news' element={<News />} /> */}
           <Route path='accounts' element={<Accounts />} />
           <Route path={'accounts/:slug'} element={<SelectedPostAccount />} />
           <Route path={'articles/:slug'} element={<SelectedPostArticle />} />

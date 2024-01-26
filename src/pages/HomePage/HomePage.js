@@ -27,7 +27,7 @@ const HomePage = () => {
     <main className='container-homePage'>
       <BannerHomePage />
       <section className='section-interesting'>
-        <PostsArticles articles = {articles} />
+        {/* <PostsArticles articles = {articles} /> */}
         <PostsAccounts accounts = {accounts} />
       </section>
     </main>

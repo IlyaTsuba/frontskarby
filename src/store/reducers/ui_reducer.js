@@ -4,12 +4,12 @@ const initialState = {
   activeTab: 'all'
 }
 
-const cacheState = () => {
-  const uiInfo = localStorage.getItem('ui');
-  return uiInfo ? JSON.parse(uiInfo) : initialState;
-}
+// const cacheState = () => {
+//   const uiInfo = localStorage.getItem('ui');
+//   return uiInfo ? JSON.parse(uiInfo) : initialState;
+// }
 
-const ui = (state = cacheState(), action ) => {
+const ui = (state = initialState, action ) => {
   switch (action.type) {
     case ACTIVE_TAB: {
       return ({
