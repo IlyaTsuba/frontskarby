@@ -78,6 +78,7 @@ function* fetchLoadLastPostsAccounts (action) {
 
 function* fetchLoadPostAccount (action) {
   if (action.userInfo === null) {
+    console.log(action.slug, action.userInfo)
     const response = yield fetch(`http://127.0.0.1:8000/accounts/${action.slug}`)
     const data = yield response.json()
     yield put(setSelectedPostAccount(data))

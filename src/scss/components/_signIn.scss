@@ -1,5 +1,5 @@
-@import '../variables';
-@import '../mixins';
+@import "../../app/styles/libs/mixins";
+@import "../../app/styles/libs/variables";
 
 @include log-main();
 

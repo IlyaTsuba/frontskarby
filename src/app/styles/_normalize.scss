@@ -1,0 +1,77 @@
+@import './libs/variables';
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  outline: none;
+  font-family: 'Roboto';
+  box-sizing: border-box;
+}
+
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  color: $black;
+  
+  
+
+
+  background: linear-gradient(90deg, rgb(233, 231, 222) 0%, rgb(232, 227, 219) 50%, rgb(221, 231, 225) 100%);
+}
+
+#root {
+  padding-top: 20px;
+  width: 1300px;
+  margin: 0 auto;
+}
+
+input {
+  all: unset;
+  /* Дополнительные обнуляющие стили по вашему выбору */
+}
+a,
+span,
+p,
+b,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $black;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  all: initial; /* Сбрасывает все свойства элемента button */
+  cursor: pointer;
+}
+
+@mixin noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Opera and Firefox */
+}

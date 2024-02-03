@@ -4,12 +4,13 @@ import { Tab } from "./Tab";
 import { activeTab } from "../../store/action_creators";
 import { useLocation } from "react-router-dom";
 
-const Navigate = () => {
+const Navigate = ({cls}) => {
   const postsAccountsCategoryInfo = useSelector(state => state.postsAccounts.postsAccounts)
   const postsArticlesCategoryInfo = useSelector(state => state.postsArticles.postsArticles)
   const arrayCategoryFromAccounts = Array.from(new Set(postsAccountsCategoryInfo.map(({category}) => category )))
   const arrayCategoryFromArticles = Array.from(new Set(postsArticlesCategoryInfo.map(({category}) => category )))
   const tabInfo = useSelector(state => state.ui.activeTab)
+  console.log(arrayCategoryFromAccounts)
   const dispatch = useDispatch();
   const [ active, setActive ] = useState(tabInfo);
   const location = useLocation();
@@ -22,10 +23,10 @@ const Navigate = () => {
     dispatch(activeTab(id))
   }
   return (
-    <div className='block-navigate'>
+    <div className={cls.block_navigate}>
       <div
         id={'all'}
-        className={`nav ${tabInfo === 'all' ? 'active' : ''}`}
+        className={`${cls.nav} ${tabInfo === 'all' ? cls.active : ''}`}
         onClick={() => handleClick('all')}
       >
         <span>
@@ -41,6 +42,7 @@ const Navigate = () => {
             text={el}
             isActive={tabInfo === el}
             callback={handleClick}
+            cls={cls}
           />
         ))
         : 
@@ -51,6 +53,7 @@ const Navigate = () => {
             text={el}
             isActive={tabInfo === el}
             callback={handleClick}
+            cls={cls}
           />
         ))
       }

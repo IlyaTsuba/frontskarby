@@ -1,12 +1,12 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './app/App';
-import { store } from './store/store';
+import App from './app/App.js';
+import { store } from './store/store.js';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import './scss/libs/_normalize.scss';
+
 
 ReactDOM.render(
+  
   <BrowserRouter>
 
     <Provider store={store} >

@@ -9,15 +9,16 @@ import {
   HomePage, 
   News, 
   RegistrationActivation, 
-  RegistrationConfirmation, 
-  SelectedPostAccount, 
+  RegistrationConfirmation,
   SelectedPostArticle, 
+  SelectedPostAccount,
   SignIn, 
   SignUp, 
   UserAccount
 } from '../pages';
 import { Loader } from '../shared';
 
+import './styles/app.scss';
 
 const App = () => {
   return (

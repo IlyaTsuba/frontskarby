@@ -1,11 +1,19 @@
 
 
-const Tab = (props) => {
-  const {callback, text, id, isActive} = props;
+const Tab = (
+  {
+    callback, 
+    text, 
+    id, 
+    isActive, 
+    cls
+  }
+) => {
+  console.log(cls)
   return (
     <div
       id={id}
-      className={`nav ${isActive ? 'active' : ''}`}
+      className={`${cls.nav} ${isActive ? cls.active : ''}`}
       onClick={() => callback(id)}
     >
       <span>

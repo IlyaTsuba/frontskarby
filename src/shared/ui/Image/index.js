@@ -1,2 +1,2 @@
 export * from './LogImage'
-export * from './HomePage-banner'
+export { HomePageBanner } from './HomePage-banner/HomePageBanner.js'

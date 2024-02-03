@@ -1,1 +1,1 @@
-export * from './UserAccount'
+export { UserAccount } from './ui/UserAccount.js'
