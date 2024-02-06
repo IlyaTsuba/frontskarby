@@ -5,13 +5,14 @@ import { useEffect } from 'react'
 import { SelectedPostAccountImage } from './SelectedPostAccountBlockImage'
 import { Likes, Loader, MarkPost, SocialMediaLink } from '../../../../shared'
 import { loadPostAccount } from '../../../../store/action_creators'
-import { accountLinks, instagram, telegram, tiktok, youtube } from '../../../../assets/icons/accountLinks/accountLinks'
+import { accountLinks } from '../../../../assets/icons/accountLinks/accountLinks'
 
 const SelectedPostAccount = () => {
   const {slug} = useParams()
   const dispatch = useDispatch();
   const userInfo = useSelector(state => state.user.user)
   const postInfo = useSelector(state => state.postsAccounts.selectedPostAccount)
+  
   const post = useSelector(() => postInfo && Object
     .values(postInfo)
     .find(el => el === slug)
@@ -25,6 +26,12 @@ const SelectedPostAccount = () => {
     fetchDataAsync()
   }, [dispatch ,slug])
     
+
+  const checkCustomer = () => {
+
+    return 
+  }
+
   return (
     <>
     { post ? (
@@ -52,11 +59,15 @@ const SelectedPostAccount = () => {
               <div className={cls.block_w_info__follow_block}>
                 <Likes postInfo={postInfo} />
                 <ul className={cls.follow_block__link}>
-                  <SocialMediaLink 
+                { 
+                  postInfo.social_media.length < 1 
+                  ? null 
+                  : <SocialMediaLink 
                     className={cls.link_item} 
                     socialMedia={postInfo.social_media} 
                     svgIcons={accountLinks} 
                   />
+                }
                 </ul>
               </div>
 

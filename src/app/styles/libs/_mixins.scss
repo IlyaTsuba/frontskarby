@@ -8,12 +8,12 @@
 
 
 @mixin log-main {
-  .container-log {
+  .container_log {
     display: flex;
     justify-content: center;
     margin-top: 36px;
     margin-bottom: 80px;
-    .container-log__block-img-a-form {
+    .container_log__block_img_a_form {
       display: inline-flex;
       align-items: center;
       gap: 110px;
@@ -26,7 +26,7 @@
 @mixin confirmed-RegistrationConfirmation {
   height: calc(100vh - 74px - 68px - 20px - 80px);
   padding: 40px 70px;
-  .block-return-to-hp {
+  .block_return_to_hp {
     display: flex;
     align-items: center;
     gap: 8px;
@@ -38,30 +38,30 @@
     svg {
       fill: $primaryGreen;
     }
-    .block-return-to-hp__link {
+    .block_return_to_hp__link {
       font-weight: 500;
     }
   }
-  .flex-container {
+  .flex_container {
     display: grid;
     justify-content: center;
     align-content: center;
     width: 100%;
     height: 100%;
-    .block-w-info {
+    .block_w_info {
       display: flex;
       flex-direction: column;
       align-items: center;
       border: 1px solid $primaryGreen;
       padding: 25px;
       border-radius: 40px;
-      .block-w-info__text {
+      .block_w_info__text {
         font-size: 18px;
         font-weight: 400;
         font-style: normal;
         line-height: 130%;
       }
-      .block-w-info__btn {
+      .block_w_info__btn {
         display: flex;
         justify-content: center;
         box-sizing: border-box;

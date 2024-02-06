@@ -14,7 +14,7 @@ const SocialMediaLink = ({ socialMedia, svgIcons, className }) => {
         </li>
       );
     }
-    return null;
+    return '';
   })}
 </>;
 };

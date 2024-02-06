@@ -1,13 +1,15 @@
-@import "../../app/styles/libs/mixins";
-@import "../../app/styles/libs/variables";
+@import "../../../app/styles/libs/_mixins";
+@import '../../../app/styles/libs/_variables.scss';
 
-.container-signUp-form {
+@include log-main();
+
+.container_signIn_form {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: 'Roboto';
   max-width: 100%;
-  .container-signUp-form__title {
+  .container_signIn_form__title {
     color: $secondaryBlack;
     font-size: 40px;
     font-style: normal;
@@ -15,14 +17,14 @@
     line-height: 150%;
     margin-bottom: 8px;
   }
-  .box-w-text {
+  .box_w_text {
     display: flex;
     padding: 8px 24px;
     justify-content: center;
     align-items: center;
     border-radius: 100px;
     background-color: $primaryGreen;
-    .box-w-text__text {
+    .box_w_text__text {
       color: $white01;
       font-size: 20px;
       font-style: normal;
@@ -30,13 +32,13 @@
       line-height: 130%;
     }
   }
-  .block-w-form {
+  .block_w_form {
     margin: 28px 0 44px 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    .block-w-form__text {
+    .block_w_form__text {
       margin-top: 16px;
       color: $secondaryBlack;
       font-size: 16px;
@@ -44,7 +46,7 @@
       font-weight: 400;
       line-height: 130%;
     }
-    .block-w-form__inpt {
+    .block_w_form__inpt {
       margin-top: 8px;
       display: flex;
       width: 100%;
@@ -55,16 +57,8 @@
       background: $secondaryGreen5;
       box-sizing: border-box;
     }
-    .error {
-      margin-top: 8px;
-      color: $black4;
-      font-size: 16px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 130%;
-    }
   }
-  .container-signUp-form__btn {
+  .container_signIn_form__btn {
     display: flex;
     justify-content: center;
     box-sizing: border-box;
@@ -79,10 +73,7 @@
     font-weight: 500;
     line-height: 150%;
   }
-  .container-signUp-form__text {
-    margin-bottom: 16px;
-  }
-  .container-signUp-form__link {
+  .container_signIn_form__link {
     color: $primaryGreen;
     font-size: 16px;
     font-style: normal;
@@ -92,6 +83,6 @@
   }
 }
 
-.container-registrationConfirmation {
+.container_confirmed {
   @include confirmed-RegistrationConfirmation();
 }

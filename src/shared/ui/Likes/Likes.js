@@ -10,12 +10,16 @@ const Likes = ({postInfo}) => {
   const [ liked, setLiked ] = useState(is_liked);
   
   const handleClickLike = (slug) => {
-    if (!liked && userInfo !== null) {
-      setLiked((prevLiked) => !prevLiked)
-      dispatch(setPostAccountLike(slug))
-    } else if ( liked && userInfo !== null) {
-      setLiked((prevLiked) => !prevLiked)
-      dispatch(removePostAccountLike(slug))
+    if (userInfo !== null) {
+      if (!liked) {
+        setLiked((prevLiked) => !prevLiked)
+        dispatch(setPostAccountLike(slug))
+      } else {
+        setLiked((prevLiked) => !prevLiked)
+        dispatch(removePostAccountLike(slug))
+      }
+    } else {
+      window.location.pathname = '/sign-in'
     }
   }
 

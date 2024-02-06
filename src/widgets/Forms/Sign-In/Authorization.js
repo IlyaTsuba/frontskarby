@@ -1,10 +1,9 @@
 import { useDispatch } from 'react-redux'
 import { useState } from 'react'
-import '../../../scss/components/_signIn.scss'
 import { signIn } from '../../../store/action_creators'
 
 
-const Authorization = () => {
+const Authorization = ({cls}) => {
   const dispatch = useDispatch();
 
   const [input, setInput] = useState({
@@ -20,31 +19,31 @@ const Authorization = () => {
   };
   
   return (
-    <div className='container-signIn-form'>
-      <h1 className='container-signIn-form__title'> 
+    <div className={cls.container_signIn_form}>
+      <h1 className={cls.container_signIn_form__title}> 
         З ВЯРТАННЕМ! 
       </h1>
-      <div className='box-w-text'>
-        <h3 className='box-w-text__text'> 
+      <div className={cls.box_w_text}>
+        <h3 className={cls.box_w_text__text}> 
           КАЛІ ЛАСКА, УВЯДЗІЦЕ СВАЕ ДАННЫЯ 
         </h3>
       </div>
-      <div className='block-w-form'>
-        <h5 className='block-w-form__text'>
+      <div className={cls.block_w_form}>
+        <h5 className={cls.block_w_form__text}>
           Ім’я або пошта
         </h5>
         <input
-          className='block-w-form__inpt' 
+          className={cls.block_w_form__inpt} 
           placeholder='Увядзіце ім’я або пошту'
           type='email'
           value={input.email}
           onChange={(val) => handle(val, 'email')}
         />
-        <h5 className='block-w-form__text'>
+        <h5 className={cls.block_w_form__text}>
           Пароль
         </h5>
         <input
-          className='block-w-form__inpt'
+          className={cls.block_w_form__inpt}
           placeholder='Увядзіце пароль'
           type='password'
           value={input.password}
@@ -52,13 +51,21 @@ const Authorization = () => {
         />
       </div>
       <button 
-        className='container-signIn-form__btn'
+        className={cls.container_signIn_form__btn}
         onClick={ () => dispatch(signIn(input))}
       > Увайсці </button>
-      <a 
-        href='/restore' 
-        className='container-signIn-form__link'
-      > Забылі пароль? </a>
+      <div className={cls.container_signIn__block_for_user}>
+        <a 
+          href='/restore' 
+          className={cls.container_signIn_form__link}
+        > Забылі пароль? </a>
+        <a 
+          href='/sign-up'
+          className={cls.container_signIn_form__link}
+        >
+          / Зарэгістравацца
+          </a>
+      </div>
     </div>
   )
 }

@@ -1,2 +1,2 @@
-export * from './SignIn'
-export * from './Confirmed'
+export { SignIn } from './ui/SignIn'
+export { Confirmed } from './ui/Confirmed'

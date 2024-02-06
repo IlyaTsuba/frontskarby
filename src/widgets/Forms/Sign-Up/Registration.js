@@ -1,10 +1,9 @@
 import { useDispatch } from 'react-redux'
-import '../../../scss/components/_signUp.scss'
 import { useState } from 'react';
 import { registration } from '../../../store/action_creators';
 import { Error } from '../../../shared'
 
-const Registration = () => {
+const Registration = ({cls}) => {
   const dispatch = useDispatch();
 
   const [input, setInput] = useState({
@@ -54,21 +53,21 @@ const Registration = () => {
   }
 
   return (
-    <div className='container-signUp-form'>
-      <h1 className='container-signUp-form__title'> 
+    <div className={cls.container_signUp_form}>
+      <h1 className={cls.container_signUp_form__title}> 
         Вітаем!
       </h1>
-      <div className='box-w-text'>
-        <h3 className='box-w-text__text'> 
+      <div className={cls.box_w_text}>
+        <h3 className={cls.box_w_text__text}> 
           КАЛІ ЛАСКА, УВЯДЗІЦЕ СВАЕ ДАННЫЯ 
         </h3>
       </div>
-      <div className='block-w-form'>
-        <h5 className='block-w-form__text'>
+      <div className={cls.block_w_form}>
+        <h5 className={cls.block_w_form__text}>
           Пошта
         </h5>
         <input
-          className='block-w-form__inpt' 
+          className={cls.block_w_form__inpt} 
           placeholder='Увядзіце пошту'
           type='email'
           title='email'
@@ -76,11 +75,11 @@ const Registration = () => {
           onChange={handle('email')}
         />
         {error && <Error error={error.email} />}
-        <h5 className='block-w-form__text'>
+        <h5 className={cls.block_w_form__text}>
           Ім’я
         </h5>
         <input
-          className='block-w-form__inpt'
+          className={cls.block_w_form__inpt}
           placeholder='Увядзіце ім’я'
           type='text'
           title='username'
@@ -88,11 +87,11 @@ const Registration = () => {
           onChange={handle('username')}
         />
         {error && <Error error={error.username} />}
-        <h5 className='block-w-form__text'>
+        <h5 className={cls.block_w_form__text}>
           Пароль
         </h5>
         <input
-          className='block-w-form__inpt'
+          className={cls.block_w_form__inpt}
           placeholder='Прыдумайце пароль'
           type='password'
           title='password'
@@ -102,15 +101,15 @@ const Registration = () => {
         {error && <Error error={error.password}/>}
       </div>
       <button 
-        className='container-signUp-form__btn'
+        className={cls.container_signUp_form__btn}
         onClick={ () => dispatch(registration(input))}
       > Стварыць </button>
       <span 
-        className='container-signUp-form__text'
+        className={cls.container_signUp_form__text}
       >   Ужо ёсць акаўнт? </span>
       <a 
         href='/sign-in' 
-        className='container-signUp-form__link'
+        className={cls.container_signUp_form__link}
       > Увайсці </a>
     </div>
   )

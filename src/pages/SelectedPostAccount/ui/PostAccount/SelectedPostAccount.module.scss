@@ -5,16 +5,20 @@
   @include Flex-box();
   padding: 40px 0;
   .choseAccount_container {
+    width: 100%;
     @include Flex-box();
     gap: 30px;
     flex-direction: column;
+    align-items: flex-start;
     background-color: $white01;
     border-radius: 28px;
     border: 1px solid $primaryGreen4;
     padding: 50px 36px;
     .choseAccount__head_title {
+      width: 100%;
       @include Flex-box();
-      gap: 160px;
+      justify-content: space-between;
+      align-items: flex-start;
       .choseAccount__block_w_info {
         @include Flex-box();
         flex-direction: column;
@@ -69,6 +73,7 @@
             // justify-content: flex-start;
 
             .link_item {
+              flex: 1;
               margin: 0 8px;
               display: flex;
               align-items: center;
@@ -76,20 +81,26 @@
               padding: 4px 25px;
               border: 1px solid $primaryGreen;
               border-radius: 15px;
-              a svg {
-                fill: $primaryGreen;
+              a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                // .tiktok {
+                //   fill: $white01 !important;
+                // }
+                svg {
+                  fill: $primaryGreen;
+                }
               }
+              
             }
           }
 
         }
       }
-
+      
       .choseAccount__block_on_right_side {
         @include Flex-box();
-        justify-content: flex-end;
-        align-items: flex-end;
-        flex: 1;
       }
     }
 

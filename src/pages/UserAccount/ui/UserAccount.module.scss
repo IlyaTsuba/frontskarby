@@ -49,19 +49,19 @@
     .block_mark {
       margin-top: 20px;
       width: 100%;
-      padding: 0px 24px 20px 0px;
+      padding-bottom: 24px;
       border-bottom: .5px solid $primaryGreen;
       display: inline-flex;
       justify-content: space-between;
       align-items: center;
       .block_w_info {
-        width: 50%;
         display: inline-flex;
         align-items: center;
         gap: 16px;
         justify-content: flex-start;
         a{
           width: 100%;
+          flex: 1;
           display: inline-flex;
           align-items: center;
           gap: 16px;
@@ -70,11 +70,11 @@
           border-radius: 14px;
           width: 155px;
           height: 105px;
-          object-fit: contain;
+          object-fit: cover;
         }
         .block_w_info__title {
           text-transform: uppercase;
-          font-size: 32px;
+          font-size: 24px;
           font-style: normal;
           font-weight: 500;
           line-height: 150%;
@@ -85,15 +85,13 @@
         flex-direction: column;
         align-items: flex-end;
         gap: 8px;
-        width: 50%;
         a {
-          width: 100%;
           display: contents;
           .btn_more {
+            width: 100%;
             @include btn_more();
             background-color: $secondaryGreen8;
             border: 1px solid $primaryGreen3;
-            width: 35%;
           }
           .btn_more:hover {
             background-color: $secondaryGreen6;
@@ -109,8 +107,8 @@
           }
         }
         .btn_delete {
+          width: 100%;
           @include btn-delete();
-          width: 35%;
           background-color: $secondaryGreen5;
         }
         .btn_delete:hover {
